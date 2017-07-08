@@ -2,9 +2,12 @@
 	<html ng-app='myApp'>
 		<head>
 			<title></title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<link rel="stylesheet" type="text/css" href="css/main.css">
 	        <script src="js/jquery-3.2.1.js"></script>
-	        <script src="js/script.js"></script>
+	        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	        <script src="js/angular.js"></script>
+	        <script src="js/angular-drag-and-drop-lists.js"></script>
 			<meta charset="utf-8">
 		</head>
 
@@ -17,20 +20,114 @@
 					<li>Education</li>
 				</ul>
 			</header>
-	  		<h1>Some of my features</h1>
+			<div class="container">
+		  		<div class="panel panel-primary">
+				    <div class="panel-heading">
+						<h1>Some of my features</h1>
+						<div>
+							<span> Show Navbar </span>
+					  		<label class="switch">
+							  <input type="checkbox" ng-click='toggleElement("#header")'>
+							  <div class="slider round"></div>
+							</label> 
+						</div>	
+					</div>
+				</div>
 
-	  		<label class="switch">
-			  <input type="checkbox" ng-click='toggleNavbar()'>
-			  <div class="slider round"></div>
-			</label> Hide Navbar
+		        
+	<!-- Draggable Panel -->
+				<div class="panel panel-info">
+				    <div class="panel-heading">
+						<h3>Sortable Pannel</h3>
+						<div>
+							<span>Show Sortable Panel</span>
+							<label class="switch">
+							  <input type="checkbox" ng-click='toggleElement("#dragPanel")'>
+							  <div class="slider round"></div>
+							</label> 
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="simpleDemo row" id='dragPanel'>
+				    <div class="col-md-8">
+				        <div class="row">
+				            <div ng-repeat="list in models" class="col-md-6">
+				                <div class="panel panel-info">
+				                    <div class="panel-heading">
+				                        <h3 class="panel-title">List</h3>
+				                    </div>
+				                    <div class="panel-body">
+								        <ul dnd-list="list">
+										    <li ng-repeat="item in list"
+										        dnd-draggable="item"
+										        dnd-moved="list.splice($index, 1)"
+										        dnd-effect-allowed="move"
+										        dnd-selected="models.selected = item"
+										        ng-class="{'selected': models.selected === item}"
+										        >
+										        {{item.label}}
+										    </li>
+										</ul>
+
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				        <div view-source="simple"></div>
+				    </div>
+
+				    <div class="col-md-4">
+				        <div class="panel panel-default">
+				            <div class="panel-heading">
+				                <h3 class="panel-title">Generated Select</h3>
+				            </div>
+				            <div class="panel-body">
+				                <select class='form-control'>
+				                	<option ng-repeat='item in models.selected' value="{{item.label}}">{{item.label}}</option>
+				                </select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+	<!-- End of Draggable Panel -->
+
+				<div class="panel panel-info">
+				    <div class="panel-heading">
+						<h3>Photo Gallery</h3>
+						<div>
+							<span>Show Photo Gallery</span>
+							<label class="switch">
+							    <input type="checkbox" ng-click='toggleElement("#photoGallery")'>
+							    <div class="slider round"></div>
+							</label> 
+						</div>
+					</div>
+				</div>
+
+				<div id="photoGallery">
+					<input type="number" min='0' class='form-control' ng-model="colWidth" style='width:200px; margin: auto;' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0">
+					<div class="row" id="#gallery" style='display: flex; flex-wrap: wrap; justify-content: center;'>
+						<div ng-repeat='img in pictures' class="col-xs-{{colWidth}} col-md-{{colWidth}}" style=' display: flex;'>
+							<a href="##" class="thumbnail">
+							    <img src="{{img.src}}" alt="{{img.alt}}">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
 	        
-
-
-
-
 	        
-	        <script src="js/angular.js"></script>
 	        <script src="js/controllers/appCtrl.js"></script>
 	        <script src="js/controllers/pageCtrl.js"></script>
+	        <script src="js/script.js"></script>
 		</body>
 	</html>

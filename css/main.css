@@ -21,6 +21,12 @@ h1,h2,h3,h4,h5,h6{
   align-items: center;
 }
 
+.thumbnail{
+  margin-bottom: 0;
+}
+.row {
+  margin: 0;
+}
 
 header{
 	background-color: black;
@@ -59,8 +65,9 @@ header{
 
 #photoGallery{
   display: none;
+  border: 1px solid #cccaca;
+  padding: 20px;
 }
-
 
 
 /* ************ libriary styles ************* */

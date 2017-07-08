@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-	<html ng-app='myApp'>
+	<html ng-app='myApp' ng-cloak>
 		<head>
 			<title></title>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<link rel="stylesheet" type="text/css" href="css/main.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
 	        <script src="js/jquery-3.2.1.js"></script>
+
 	        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
 	        <script src="js/angular.js"></script>
 	        <script src="js/angular-drag-and-drop-lists.js"></script>
 			<meta charset="utf-8">
 		</head>
 
 		<body ng-controller='pageCtrl'>
+	<!-- Navigation header -->
 			<header id='header'>
 				<ul class='nav-panel'>
 					<li>Home</li>
@@ -20,8 +25,10 @@
 					<li>Education</li>
 				</ul>
 			</header>
+
 			<div class="container">
-		  		<div class="panel panel-primary">
+	<!-- header -->
+		  		<section class="panel panel-primary">
 				    <div class="panel-heading">
 						<h1>Some of my features</h1>
 						<div>
@@ -32,90 +39,122 @@
 							</label> 
 						</div>	
 					</div>
-				</div>
+				</section>
 
-		        
 	<!-- Draggable Panel -->
-				<div class="panel panel-info">
-				    <div class="panel-heading">
-						<h3>Sortable Pannel</h3>
-						<div>
-							<span>Show Sortable Panel</span>
-							<label class="switch">
-							  <input type="checkbox" ng-click='toggleElement("#dragPanel")'>
-							  <div class="slider round"></div>
-							</label> 
+				<section>
+					<div class="panel panel-info">
+					    <div class="panel-heading">
+							<h3>Sortable Pannel</h3>
+							<div>
+								<span>Show Sortable Panel</span>
+								<label class="switch">
+								  <input type="checkbox" ng-click='toggleElement("#dragPanel")'>
+								  <div class="slider round"></div>
+								</label> 
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				
-				<div class="simpleDemo row" id='dragPanel'>
-				    <div class="col-md-8">
-				        <div class="row">
-				            <div ng-repeat="list in models" class="col-md-6">
-				                <div class="panel panel-info">
-				                    <div class="panel-heading">
-				                        <h3 class="panel-title">List</h3>
-				                    </div>
-				                    <div class="panel-body">
-								        <ul dnd-list="list">
-										    <li ng-repeat="item in list"
-										        dnd-draggable="item"
-										        dnd-moved="list.splice($index, 1)"
-										        dnd-effect-allowed="move"
-										        dnd-selected="models.selected = item"
-										        ng-class="{'selected': models.selected === item}"
-										        >
-										        {{item.label}}
-										    </li>
-										</ul>
+					
+					
+					<div class="simpleDemo row" id='dragPanel'>
+					    <div class="col-md-8">
+					        <div class="row">
+					            <div ng-repeat="list in models" class="col-md-6">
+					                <div class="panel panel-info">
+					                    <div class="panel-heading">
+					                        <h3 class="panel-title">List</h3>
+					                    </div>
+					                    <div class="panel-body">
+									        <ul dnd-list="list">
+											    <li ng-repeat="item in list"
+											        dnd-draggable="item"
+											        dnd-moved="list.splice($index, 1)"
+											        dnd-effect-allowed="move"
+											        ng-class="{'selected': models.selected === item}"
+											        >
+											        {{item.label}}
+											    </li>
+											</ul>
 
-				                    </div>
-				                </div>
-				            </div>
-				        </div>
-				        <div view-source="simple"></div>
-				    </div>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					        <div view-source="simple"></div>
+					    </div>
 
-				    <div class="col-md-4">
-				        <div class="panel panel-default">
-				            <div class="panel-heading">
-				                <h3 class="panel-title">Generated Select</h3>
-				            </div>
-				            <div class="panel-body">
-				                <select class='form-control'>
-				                	<option ng-repeat='item in models.selected' value="{{item.label}}">{{item.label}}</option>
-				                </select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-	<!-- End of Draggable Panel -->
-
-				<div class="panel panel-info">
-				    <div class="panel-heading">
-						<h3>Photo Gallery</h3>
-						<div>
-							<span>Show Photo Gallery</span>
-							<label class="switch">
-							    <input type="checkbox" ng-click='toggleElement("#photoGallery")'>
-							    <div class="slider round"></div>
-							</label> 
+					    <div class="col-md-4">
+					        <div class="panel panel-default">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">Generated Select</h3>
+					            </div>
+					            <div class="panel-body">
+					                <select class='form-control' ng-model='selectedDragValue'>
+					                	<option ng-repeat='item in models.selected' value="{{item.id}}">{{item.label}}</option>
+					                </select>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+					<div class="row panel panel-success" ng-switch='selectedDragValue'>
+						<div ng-switch-when='4' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
+						</div>
+						<div ng-switch-when='3' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
+						</div>
+						<div ng-switch-when='2' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
+						</div>
+						<div ng-switch-when='66' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
+						</div>
+						<div ng-switch-when='32' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
+						</div>
+						<div ng-switch-when='5' class="panel-heading">
+							<h1>You selected <b>{{selectedDragValue}}</b> value. What is your next action?</h1>
 						</div>
 					</div>
-				</div>
+				</section>
 
-				<div id="photoGallery">
-					<input type="number" min='0' class='form-control' ng-model="colWidth" style='width:200px; margin: auto;' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0">
-					<div class="row" id="#gallery" style='display: flex; flex-wrap: wrap; justify-content: center;'>
-						<div ng-repeat='img in pictures' class="col-xs-{{colWidth}} col-md-{{colWidth}}" style=' display: flex;'>
-							<a href="##" class="thumbnail">
-							    <img src="{{img.src}}" alt="{{img.alt}}">
-							</a>
+	<!-- Photo Gallery -->
+				<section>
+					<div class="panel panel-info">
+					    <div class="panel-heading">
+							<h3>Photo Gallery</h3>
+							<div>
+								<span>Show Photo Gallery</span>
+								<label class="switch">
+								    <input type="checkbox" ng-click='toggleElement("#photoGallery")'>
+								    <div class="slider round"></div>
+								</label> 
+							</div>
 						</div>
 					</div>
-				</div>
+
+					<div id="photoGallery">
+						<input type="number" min='0' class='form-control' ng-model="colWidth" style='width:200px; background-color:#d9edf7; margin: 0 auto 10px; ' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0" required>
+						<div class="input-group" style='margin: 0 auto 10px; '>
+							<input type="url" class='form-control' placeholder='http://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg' style='width:200px; background-color:#d9edf7;' data-toggle="tooltip" data-placement="left" title="Input CDN adress of image" ng-model='tempURL' required>
+							<button class='btn btn-success' style='border-radius: 0 4px 4px 0' ng-click='addImg()'>Add</button>
+						</div>
+						<div class="row" id="#gallery" style='display: flex; flex-wrap: wrap; justify-content: center;'>
+							<div ng-repeat='img in pictures' class="col-xs-{{colWidth}} col-md-{{colWidth}} thumbnail" style=' display: flex; flex-flow: column wrap; justify-content: space-between;'>
+								<a href="{{img.src}}"  data-fancybox='images'>
+								    <img src="{{img.src}}" alt="{{img.alt}}">
+								</a>
+								<button class='btn btn-danger' ng-click='delImg($index)'>Delete</button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+	<!-- Gradient Animation -->
+				<section>
+
+				</section>
 			</div>
 
 

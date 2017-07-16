@@ -4,184 +4,32 @@
 			<title>Alex Features</title>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<link rel="stylesheet" href="css/font-awesome.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
-	        <script src="js/jquery-3.2.1.js"></script>
-	        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-	        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-	        <script src="js/angular.js"></script>
-	        <script src="js/angular-drag-and-drop-lists.js"></script>
 
 	        <link rel="stylesheet" type="text/css" href="css/main.css">
+	        <base href="/"/>
 		</head>
 
-		<body ng-controller='pageCtrl'>
+		<body>
 	<!-- Navigation header -->
 			<header id='header'>
 				<ul class='nav-panel'>
-					<li>Home</li>
-					<li>Contacts</li>
-					<li>My Works</li>
-					<li>Education</li>
+					<li><a href="home">Home</a></li>
+					<li><a href="contacts">Contacts</a></li>
+					<li><a href="myworks">My Works</a></li>
+					<li><a href="education">Education</a></li>
 				</ul>
 			</header>
 
 			<div class="container">
+				
+				<div ng-view></div> 
+
 	<!-- header -->
-		  		<section class="panel panel-primary">
-				    <div class="panel-heading">
-						<h1>Some of my features</h1>
-						<div>
-							<span> Show Navbar </span>
-					  		<label class="switch">
-							  <input type="checkbox" ng-click='toggleElement("#header")'>
-							  <div class="slider round"></div>
-							</label> 
-						</div>	
-					</div>
-				</section>
-
-	<!-- Draggable Panel -->
-				<section>
-					<div class="panel panel-info">
-					    <div class="panel-heading">
-							<h3>Sortable Pannel <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></h3>
-							<div>
-								<span>Show Sortable Panel</span>
-								<label class="switch">
-								  <input type="checkbox" ng-click='toggleElement("#dragPanel")'>
-								  <div class="slider round"></div>
-								</label> 
-							</div>
-						</div>
-					</div>
-					
-					
-					<div class="simpleDemo row" id='dragPanel'>
-					    <div class="col-md-8">
-					        <div class="row">
-					            <div ng-repeat="list in models" class="col-md-6">
-					                <div class="panel panel-info">
-					                    <div class="panel-heading">
-					                        <h3 class="panel-title">List</h3>
-					                    </div>
-					                    <div class="panel-body">
-									        <ul dnd-list="list">
-											    <li ng-repeat="item in list"
-											        dnd-draggable="item"
-											        dnd-moved="list.splice($index, 1)"
-											        dnd-effect-allowed="move"
-											        ng-class="{'selected': models.selected === item}"
-											        >
-											        {{item.label}}
-											    </li>
-											</ul>
-
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
-					        <div view-source="simple"></div>
-					    </div>
-
-					    <div class="col-md-4">
-					        <div class="panel panel-default">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Generated Select</h3>
-					            </div>
-					            <div class="panel-body">
-					                <select class='form-control' ng-model='selectedDragValue'>
-					                	<option ng-repeat='item in models.selected' value="{{item.id}}">{{item.label}}</option>
-					                </select>
-					            </div>
-					        </div>
-					    </div>
-						<div class="row panel panel-success" ng-switch='selectedDragValue'>
-							<div ng-switch-when='4' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-							<div ng-switch-when='3' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-							<div ng-switch-when='2' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-							<div ng-switch-when='66' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-							<div ng-switch-when='32' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-							<div ng-switch-when='5' class="panel-heading">
-								<h1>Selected value is <b>{{selectedDragValue}}</b>. What is your next action?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
-							</div>
-						</div>
-					</div>
-				</section>
-
-	<!-- Photo Gallery -->
-				<section>
-					<div class="panel panel-info">
-					    <div class="panel-heading">
-							<h3>Photo Gallery <i class="fa fa-picture-o" aria-hidden="true"></i></h3>
-							<div>
-								<span>Show Photo Gallery</span>
-								<label class="switch">
-								    <input type="checkbox" ng-click='toggleElement("#photoGallery")'>
-								    <div class="slider round"></div>
-								</label> 
-							</div>
-						</div>
-					</div>
-
-					<div id="photoGallery">
-						<input type="number" min='0' class='form-control' ng-model="colWidth" style='width:200px; background-color:#d9edf7; margin: 0 auto 10px; ' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0" required>
-						<div class="input-group" style='margin: 0 auto 10px; '>
-							<input type="url" class='form-control' placeholder='http://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg' style='width:200px; background-color:#d9edf7;' data-toggle="tooltip" data-placement="left" title="Input CDN adress of image" ng-model='tempURL' required>
-							<button class='btn btn-success' style='border-radius: 0 4px 4px 0' ng-click='addImg()' ng-disabled='tempURL == null'>Add</button>
-						</div>
-						<div class="row" id="#gallery" style='display: flex; flex-wrap: wrap; justify-content: center;'>
-							<div ng-repeat='img in pictures' class="col-xs-{{colWidth}} col-md-{{colWidth}} thumbnail" style=' display: flex; flex-flow: column wrap; justify-content: space-between;'>
-								<a href="{{img.src}}"  data-fancybox='images'>
-								    <img src="{{img.src}}" alt="{{img.alt}}">
-								</a>
-								<button class='btn btn-danger' ng-click='delImg($index)'>Delete</button>
-							</div>
-						</div>
-					</div>
-				</section>
-
-	<!-- Gradient Animation -->
-				<section>
-					<div class="panel panel-info">
-					    <div class="panel-heading">
-							<h3>Gradient Animation <i class="fa fa-spinner fa-spin fa-fw"></i></h3>
-							<div>
-								<span>Show Gradient Animation </span>
-								<label class="switch">
-								    <input type="checkbox" ng-click='toggleElement("#gradientAnimation")'>
-								    <div class="slider round"></div>
-								</label> 
-							</div>
-						</div>
-					</div>
-					<div id="gradientAnimation" style='display: none;'>
-						<div>
-							<button class='btn btn-success' ng-click='toggleColorInterval()' >Start animate</button><br>
-							<span class='animatedText' style='color: hsl({{tempcol1}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-							<span class='animatedText' style='color: hsl({{tempcol2}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-							<span class='animatedText' style='color: hsl({{tempcol3}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-							<span class='animatedText' style='color: hsl({{tempcol4}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-							<span class='animatedText' style='color: hsl({{tempcol5}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-						</div>
-						<button class='btn btn-success' ng-click='draw()' ng-disabled='!drawIsAllowed'>Draw</button>
-						<div style='margin-top: 10px;'>
-							<canvas id="canvas" height="300px" width="600px"></canvas>
-						</div>
-					</div>
-				</section>
+		  		
 			</div>
 
 
@@ -190,10 +38,19 @@
 
 
 
+
 	        
+			<script src="js/jquery-3.2.1.js"></script>
+	        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+	        
+	        <script src="js/angular.js"></script>
+	        <script src="js/angular-drag-and-drop-lists.js"></script>
+	        <script src="js/angular_route.js"></script>
 	        
 	        <script src="js/controllers/appCtrl.js"></script>
-	        <script src="js/controllers/pageCtrl.js"></script>
+	        <script src="js/controllers/homeCtrl.js"></script>
+	        <script src="js/controllers/contactsCtrl.js"></script>
 	        <script src="js/script.js"></script>
 		</body>
 	</html>

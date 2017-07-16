@@ -1,0 +1,40 @@
+<div ng-controller='contactsCtrl as contacts' style='margin-top: 15px;'>
+	<div class="row">
+		<div class="col-md-3">
+			<img id="ava" ng-click='contacts.showModal()' class='ava thumbnail' src="../img/ava.jpg" alt="">
+			<button style='width: 100%; margin:5px 0;' class='btn btn-info'>Click on me</button>
+			<button style='width: 100%; margin:5px 0;' class='btn btn-info'>Click on me</button>
+			<button style='width: 100%; margin:5px 0;' class='btn btn-info'>Click on me</button>
+			<button style='width: 100%; margin:5px 0;' class='btn btn-info'>Click on me</button>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-7 about-me jumbotron">
+			<h2 class="text-center">Hi! My name is Alexandr.</h2>
+			<hr>	
+			<p>I'm 26. I finished <a href="http://nau.edu.ua/">National Aviation university</a> in 2014. Then I worked as an installation engineer for satellite TV and air conditioners. In 2016, I went to the programming courses, where I studied 6 months in the field of Front End.</p>
+			<p>My hobby is hockey. I read books and listen to music in free time. I like spend time in nature and travel. My dream is to become a Senior Fullstuck Developer</p>
+			<h2 class="text-center">Work experience</h2>
+			<hr>
+			<ul>
+				<li><span>Installation engineer</span> for satellite TV and air conditioners - 2015</li>
+				<li><span>Specialist in repairing washing machines</span> - 2016</li>
+				<li><span>Front End Developer</span> - <a target="blanc" href="http://www.relatedata.com/">Relate Data 2017</a></li>
+				<li><span>Front End Developer (AngularJS)</span> - <a target="blanc" href="https://www.bpotel.com/">BPO telecom 2017</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+
+	<div id="myModal" class="modal" ng-click='contacts.close()'>
+		<!-- The Close Button -->
+		<span class="close" ng-click='contacts.close()'>&times;</span>
+
+		<!-- Modal Content (The Image) -->
+		<img class="modal-content" id="img01">
+
+		<!-- Modal Caption (Image Text) -->
+		<div id="caption"></div>
+	</div>
+</div>
+

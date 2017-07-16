@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller("pageCtrl", function($scope, $interval) {
+	.controller("homeCtrl", function($scope, $interval) {
 		$scope.colWidth = 2; // default value for column of picture in Gallery 
 		$scope.tempURL = null; //default value for add picture ti the album
 		$scope.drawIsAllowed = true;  //var for timer which used canvas

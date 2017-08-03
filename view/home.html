@@ -152,4 +152,67 @@
 			</div>
 		</div>
 	</section>
+	
+    <!--  Notifications	-->
+    <section>
+        <div class="panel panel-info">
+		    <div class="panel-heading">
+				<h3>Notifications <i class="fa fa-bell-o" aria-hidden="true"></i></h3>
+				<div>
+					<span>Show notifications bar </span>
+					<label class="switch">
+					    <input type="checkbox" ng-click='toggleElement("#notification")'>
+					    <div class="slider round"></div>
+					</label> 
+				</div>
+			</div>
+		</div>
+        <div id="notification" style='display: none;'>
+            <button class='btn btn-success' ng-click='showNotification()'>Show notification</button>
+		</div>
+    </section>
+    
+    <!--  Palette Styles  -->
+    <section>
+        <div class="panel panel-info">
+		    <div class="panel-heading">
+				<h3>Change Color Cheme of site <i class="fa fa-paint-brush" aria-hidden="true"></i></h3>
+				<div>
+					<span>Show color bar </span>
+					<label class="switch">
+					    <input type="checkbox" ng-click='toggleElement("#colorScheme")'>
+					    <div class="slider round"></div>
+					</label> 
+				</div>
+			</div>
+		</div>
+        <div id="colorScheme" style='display: none;'>
+            <button class='btn btn-info'>Cyan</button>
+            <button class='btn btn-warning'>Orange</button>
+            <button class='btn btn-success'>Green</button>
+            <button class='btn btn-danger'>Red</button>
+            <label for="color">Your own style</label>
+            <input type="color" name='color'>
+		</div>
+    </section>
+    
+    <!--  Translations  -->
+    <section>
+        <div class="panel panel-info">
+		    <div class="panel-heading">
+				<h3>Change Language <i class="fa fa-language" aria-hidden="true"></i></h3>
+				<div>
+					<span>Show language bar </span>
+					<label class="switch">
+					    <input type="checkbox" ng-click='toggleElement("#languages")'>
+					    <div class="slider round"></div>
+					</label> 
+				</div>
+			</div>
+		</div>
+        <div id="languages" style='display: none;'>
+            <button class='btn btn-info'>Ukraine</button>
+            <button class='btn btn-warning'>English</button>
+		</div>
+    </section>
 </div>

@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller("homeCtrl", function($scope, $interval) {
+	.controller("homeCtrl", function($scope, $interval, desktopNotification) {
 		$scope.colWidth = 2; // default value for column of picture in Gallery 
 		$scope.tempURL = null; //default value for add picture ti the album
 		$scope.drawIsAllowed = true;  //var for timer which used canvas
@@ -113,8 +113,21 @@ angular.module('myApp')
 	    	{src: 'https://i.ytimg.com/vi/z3RW89P4l8U/maxresdefault.jpg', alt: 'Content Picture'},
 	    	{src: 'https://cdn-images-1.medium.com/max/1600/1*I_r0YPufSGz-pTgHsDwqDg.png', alt: 'Content Picture'},
 	    	{src: 'https://i.ytimg.com/vi/QFtxVIO8TT0/maxresdefault.jpg', alt: 'Content Picture'},
-	    	{src: 'http://blog.catchpoint.com/wp-content/uploads/2016/11/front-end-back-end-network-performance.jpg', alt: 'Content Picture'},
-	    	{src: 'http://blog.eduweb.pl/wp-content/uploads/2016/10/cover.jpg', alt: 'Content Picture'},
-	    	{src: 'https://gun.io/static/uploads/web%20dev.jpg', alt: 'Content Picture'},
+	    	{src: 'http://blog.eduweb.pl/wp-content/uploads/2016/10/cover.jpg', alt: 'Content Picture'}
 	    ];
+    
+        $scope.playAudio = function() {
+	        var audio = new Audio('../../audio/msg.mp3');
+	        audio.play();
+	    };
+    
+        $scope.showNotification = function(){
+			if(Notification.permission == 'granted'){
+				$scope.playAudio();
+			}
+			desktopNotification.show('Hello', {
+				icon: "../../img/ava.jpg",
+    			body: 'This is notification))',
+    		});
+		}
 	})

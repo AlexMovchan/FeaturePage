@@ -117,6 +117,12 @@ header a:focus{
 .gallery{
     animation: gallery 2s infinite;
 }
+.charts {
+    animation: chartsTranslate .7s infinite;
+}
+.dnd-pan{
+    animation: dndPanel .7s infinite;
+}
 
 @keyframes pulse {
   0% {
@@ -195,6 +201,32 @@ header a:focus{
 	transform: rotate(0deg);
   }
 }
+
+@keyframes chartsTranslate {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -5px);
+  }
+  100% {
+	transform: translate(0px, 0px);
+  }
+}
+
+@keyframes dndPanel {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 5px);
+  }
+  100% {
+	transform: translate(0px, 0px);
+  }
+}
+
+
 
 
 /* ************ libriary styles ************* */

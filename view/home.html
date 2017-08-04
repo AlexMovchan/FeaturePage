@@ -1,11 +1,11 @@
-<div ng-controller='homeCtrl'>
+<div>
 	<section class="panel panel-primary" style='border-color: black'>
 	    <div class="panel-heading" style='background-color: orange; border-color: orange'>
 			<h1>{{translation.TOOLS_WHICH_I_USE}}</h1>
 			<div>
 				<span>{{translation.HIDE_NAVBAR}} </span>
 		  		<label class="switch">
-				  <input type="checkbox" ng-click='toggleElement("#header")'>
+				  <input type="checkbox" ng-click='home.toggleElement("#header")'>
 				  <div class="slider round"></div>
 				</label> 
 			</div>	
@@ -16,11 +16,11 @@
 	<section>
 		<div class="panel panel-info">
 		    <div class="panel-heading orange-panels">
-				<h3>{{translation.SORTABLE_PANEL}} <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></h3>
+				<h3>{{translation.SORTABLE_PANEL}} <i class="fa fa-sort-amount-asc dnd-pan" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_SORTABLE_PANEL}}</span>
 					<label class="switch">
-					  <input type="checkbox" ng-click='toggleElement("#dragPanel")'>
+					  <input type="checkbox" ng-click='home.toggleElement("#dragPanel")'>
 					  <div class="slider round"></div>
 					</label> 
 				</div>
@@ -31,7 +31,7 @@
 		<div class="simpleDemo row" id='dragPanel'>
 		    <div class="col-md-8">
 		        <div class="row">
-		            <div ng-repeat="list in models" class="col-md-6">
+		            <div ng-repeat="list in home.models" class="col-md-6">
 		                <div class="panel panel-info">
 		                    <div class="panel-heading">
 		                        <h3 class="panel-title">{{translation.LIST}}</h3>
@@ -61,31 +61,31 @@
 		                <h3 class="panel-title">{{translation.GENERATED_SELECT}}</h3>
 		            </div>
 		            <div class="panel-body">
-		                <select class='form-control' ng-model='selectedDragValue'>
-		                	 <option value="" disabled selected>{{translation.SELECT_YOUR_OPTION}}</option>
-		                	<option ng-repeat='item in models.selected' value="{{item.id}}">{{item.label}}</option>
+		                <select class='form-control' ng-model='home.selectedDragValue'>
+		                	<option value="" disabled selected>{{translation.SELECT_YOUR_OPTION}}</option>
+		                	<option ng-repeat='item in home.models.selected' value="{{item.id}}">{{item.label}}</option>
 		                </select>
 		            </div>
 		        </div>
 		    </div>
-			<div class="row panel panel-success" ng-switch='selectedDragValue'>
+			<div class="row panel panel-success" ng-switch='home.selectedDragValue'>
 				<div ng-switch-when='4' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.What is your next action}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 				<div ng-switch-when='3' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 				<div ng-switch-when='2' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 				<div ng-switch-when='66' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 				<div ng-switch-when='32' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 				<div ng-switch-when='5' class="panel-heading">
-					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+					<h1>{{translation.SELECTED_VALUE_IS}} <b>{{home.selectedDragValue}}</b>. {{translation.WHAT_IS_YOUR_NEXT_ACTION}} ?<i class="fa fa-smile-o" aria-hidden="true"></i></h1>
 				</div>
 			</div>
 		</div>
@@ -99,24 +99,24 @@
 				<div>
 					<span>{{translation.SHOW_PHOTO_GALLERY}}</span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#photoGallery")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#photoGallery")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
 			</div>
 		</div>
 		<div id="photoGallery">
-			<input type="number" min='0' class='form-control' ng-model="colWidth" style='width:200px; background-color:#d9edf7; margin: 0 auto 10px; ' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0" required>
+			<input type="number" min='0' class='form-control' ng-model="home.colWidth" style='width:200px; background-color:#d9edf7; margin: 0 auto 10px; ' data-toggle="tooltip" data-placement="right" title="Set number of columns. Number must be >= 0" required>
 			<div class="input-group" style='margin: 0 auto 10px; '>
-				<input type="url" class='form-control' placeholder='http://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg' style='width:200px; background-color:#d9edf7;' data-toggle="tooltip" data-placement="left" title="Input CDN adress of image" ng-model='tempURL' required>
-				<button class='btn btn-success' style='border-radius: 0 4px 4px 0' ng-click='addImg()' ng-disabled='tempURL == null'>{{translation.ADD}}</button>
+				<input type="url" class='form-control' placeholder='http://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg' style='width:200px; background-color:#d9edf7;' data-toggle="tooltip" data-placement="left" title="Input CDN adress of image" ng-model='home.tempURL' required>
+				<button class='btn btn-success' style='border-radius: 0 4px 4px 0' ng-click='home.addImg()' ng-disabled='home.tempURL == null'>{{translation.ADD}}</button>
 			</div>
 			<div class="row" id="#gallery" style='display: flex; flex-wrap: wrap; justify-content: center;'>
-				<div ng-repeat='img in pictures' class="col-xs-{{colWidth}} col-md-{{colWidth}} thumbnail" style=' display: flex; flex-flow: column wrap; justify-content: space-between;'>
+				<div ng-repeat='img in home.pictures' class="col-xs-{{home.colWidth}} col-md-{{home.colWidth}} thumbnail" style=' display: flex; flex-flow: column wrap; justify-content: space-between;'>
 					<a href="{{img.src}}"  data-fancybox='images'>
 					    <img ng-src="{{img.src}}" alt="{{img.alt}}">
 					</a>
-					<button class='btn btn-danger' ng-click='delImg($index)'>{{translation.DELETE}}</button>
+					<button class='btn btn-danger' ng-click='home.delImg($index)'>{{translation.DELETE}}</button>
 				</div>
 			</div>
 		</div>
@@ -130,7 +130,7 @@
 				<div>
 					<span>{{translation.SHOW_GRADIENT_ANIMATION}} </span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#gradientAnimation")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#gradientAnimation")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
@@ -138,14 +138,14 @@
 		</div>
 		<div id="gradientAnimation" style='display: none;'>
 			<div>
-				<button class='btn btn-success' ng-click='toggleColorInterval()' >{{translation.START_ANIMATE}}</button><br>
-				<span class='animatedText' style='color: hsl({{tempcol1}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-				<span class='animatedText' style='color: hsl({{tempcol2}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-				<span class='animatedText' style='color: hsl({{tempcol3}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-				<span class='animatedText' style='color: hsl({{tempcol4}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
-				<span class='animatedText' style='color: hsl({{tempcol5}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
+				<button class='btn btn-success' ng-click='home.toggleColorInterval()' >{{translation.START_ANIMATE}}</button><br>
+				<span class='animatedText' style='color: hsl({{home.tempcol1}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
+				<span class='animatedText' style='color: hsl({{home.tempcol2}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
+				<span class='animatedText' style='color: hsl({{home.tempcol3}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
+				<span class='animatedText' style='color: hsl({{home.tempcol4}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
+				<span class='animatedText' style='color: hsl({{home.tempcol5}}, 100%, 48%)'><i class="fa fa-circle" aria-hidden="true"></i></span>
 			</div>
-			<button class='btn btn-success' ng-click='draw()' ng-disabled='!drawIsAllowed'>{{translation.DRAW}}</button>
+			<button class='btn btn-success' ng-click='home.draw()' ng-disabled='!home.drawIsAllowed'>{{translation.DRAW}}</button>
 			<div style='margin-top: 10px;'>
 				<canvas id="canvas" height="300px" width="600px"></canvas>
 			</div>
@@ -160,14 +160,14 @@
 				<div>
 					<span>{{translation.SHOW_NOTIFICATIONS_BAR}} </span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#notification")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#notification")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
 			</div>
 		</div>
         <div id="notification" style='display: none;'>
-            <button class='btn btn-success' ng-click='showNotification()'>{{translation.SHOW_NOTIFICATIONS}}</button>
+            <button class='btn btn-success' ng-click='home.showNotification()'>{{translation.SHOW_NOTIFICATIONS}}</button>
 		</div>
     </section>
     
@@ -175,11 +175,11 @@
     <section>
         <div class="panel panel-info">
 		    <div class="panel-heading orange-panels">
-				<h3>{{translation.CHANGE_COLOR_THEME_OF_SITE}} <i class="fa fa-paint-brush rotate" aria-hidden="true"></i></h3>
+				<h3>{{translation.THEME_CHANGER}} <i class="fa fa-paint-brush rotate" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_COLOR_BAR}} </span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#colorScheme")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#colorScheme")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
@@ -199,11 +199,11 @@
     <section>
         <div class="panel panel-info">
 		    <div class="panel-heading orange-panels">
-				<h3>{{translation.CHANGE_LANGUAGE}} <i class="fa fa-language bookslide" aria-hidden="true"></i></h3>
+				<h3>{{translation.MULTI_LANGUAGE}} <i class="fa fa-language bookslide" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_LANGUAGE_BAR}} </span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#languages")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#languages")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
@@ -215,23 +215,25 @@
             <button class='btn btn-warning' ng-click='translate("en")'>{{translation.ENGLISH}}</button>
 		</div>
     </section>
+
+    <!-- Charts Section -->
     <section>
         <div class="panel panel-info">
 		    <div class="panel-heading orange-panels">
-				<h3>{{translation.CHARTS}} <i class="fa fa-bar-chart" aria-hidden="true"></i></h3>
+				<h3>{{translation.CHARTS}} <i class="fa fa-bar-chart charts" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_CHARTS_PANEL}} </span>
 					<label class="switch">
-					    <input type="checkbox" ng-click='toggleElement("#charts")'>
+					    <input type="checkbox" ng-click='home.toggleElement("#charts")'>
 					    <div class="slider round"></div>
 					</label> 
 				</div>
 			</div>
 		</div>
         <div id="charts" style='display: none;'>
-            <canvas id="line" class="chart chart-line" chart-data="data"
-                chart-labels="labels" chart-series="series" chart-options="options"
-                chart-dataset-override="datasetOverride" chart-click="onClick">
+            <canvas id="line" class="chart chart-line" chart-data="home.data"
+                chart-labels="home.labels" chart-series="home.series" chart-options="home.options"
+                chart-dataset-override="home.datasetOverride" chart-click="home.onClick">
             </canvas>
 		</div>
     </section>

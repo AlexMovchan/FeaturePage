@@ -6,6 +6,7 @@ angular.module("myApp")
 		$routeProvider.when("/home", {
 		    templateUrl: "view/home.html",
             controller: 'homeCtrl',
+            controllerAs: 'home'
 		});
 
 		$routeProvider.when("/contacts", {

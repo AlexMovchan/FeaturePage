@@ -1,4 +1,8 @@
 {  
+    "GREETINGS" : "Привет! Меня зовут Александр.",
+    "BIO" : "<p>Мне 26 лет. Я окончил <a href='http://nau.edu.ua/'>национальный Авиационный yниверситет</a> в 2014г. Потом я работал установщиком супутникового ТВ и кондиционеров. В 2016г я пошел на курсы программирования (Фронт Енд), которые длились 6 месяцев. </p> <p>Мое хобби - хоккей. В свободное время я читаю книги и слушаю музыку. Мне нравиться проводить время на природе и путешествовать. Моя мечта стать Senior Fullstuck Developer</p>",
+    "WORK_EXPERIENCE" : "Опыт Работы",
+    "WORK_PLACES" : "<li><span>Установщик </span>супутникового ТВ и кондиционеров - 2015</li><li><span>Специалист по ремонту стиральных машин</span> - 2016</li><li><span>Front End Developer</span> - <a target='_blank' href='http://www.relatedata.com/'>Relate Data 2017</a></li><li><span>Front End Developer (AngularJS)</span> - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom 2017</a></li>",
     "TOOLS_WHICH_I_USE" : "Инструменты которые я использовал",
     "HIDE_NAVBAR" : "Спрятать Навигацию",
     "SORTABLE_PANEL" : "Панель сортировки",
@@ -19,14 +23,14 @@
     "NOTIFICATIONS" : "Оповещения",
     "SHOW_NOTIFICATIONS" : "Показать оповещение",
     "SHOW_NOTIFICATIONS_BAR" : "Показать панель",
-    "CHANGE_COLOR_THEME_OF_SITE" : "Изменить цветовую тему сайта",
+    "THEME_CHANGER" : "Изменить оформление сайта",
     "SHOW_COLOR_BAR" : "Показать панель",
     "CYAN" : "Голубой",
     "ORANGE" : "Оранжевый",
     "GREEN" : "Зленый",
     "RED" : "Красный",
     "YOUR_OWN_STYLE" : "Ваш собственный стиль",
-    "CHANGE_LANGUAGE" : "Изменить язык",
+    "MULTI_LANGUAGE" : "Изменить язык",
     "SHOW_LANGUAGE_BAR" : "Показать языковую панель",
     "UKRAINIAN" : "Украинский",
     "ENGLISH" : "Английский", 
@@ -34,7 +38,7 @@
     "CHARTS" : "Графики",
     "SHOW_CHARTS_PANEL" : "Показать панель графиков",
     "HOME" : "Главная",
-    "CONTACTS" : "Контакты",
-    "MY_WORKS" : "Мои работы",
-    "EDUCATION" : "Образование"
+    "ABOUT_ME" : "Обо мне",
+    "MY_PROJECTS" : "Мои проэкты",
+    "USED_LITERATURE" : "Использованные библиотеки"
 }

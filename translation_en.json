@@ -1,4 +1,8 @@
 {  
+    "GREETINGS" : "Hi! My name is Alexandr.",
+    "BIO" : "<p>I'm 26. I finished <a href='http://nau.edu.ua/'>National Aviation university</a> in 2014. Then I worked as an installation engineer for satellite TV and air conditioners. In 2016, I went to the programming courses, where I studied 6 months in the field of Front End. </p> <p>My hobby is hockey. I read books and listen to music in free time. I like spend time in nature and travel. My dream is to become a Senior Fullstuck Developer</p>",
+    "WORK_EXPERIENCE" : "Work experience",
+    "WORK_PLACES" : "<li><span>Installation engineer</span> for satellite TV and air conditioners - 2015</li><li><span>Specialist in repairing washing machines</span> - 2016</li><li><span>Front End Developer</span> - <a target='_blank' href='http://www.relatedata.com/'>Relate Data 2017</a></li><li><span>Front End Developer (AngularJS)</span> - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom 2017</a></li>",
     "TOOLS_WHICH_I_USE" : "Tools which I use",
     "HIDE_NAVBAR" : "Hide Navbar",
     "SORTABLE_PANEL" : "Sortable Pannel",
@@ -19,14 +23,14 @@
     "NOTIFICATIONS" : "Notifications",
     "SHOW_NOTIFICATIONS" : "Show notifications ",
     "SHOW_NOTIFICATIONS_BAR" : "Show notifications bar ",
-    "CHANGE_COLOR_THEME_OF_SITE" : "Change Color Theme of site ",
+    "THEME_CHANGER" : "Theme Changer ",
     "SHOW_COLOR_BAR" : "Show color bar ",
     "CYAN" : "Cyan",
     "ORANGE" : "Orange",
     "GREEN" : "Green",
     "RED" : "Red",
     "YOUR_OWN_STYLE" : "Your own style",
-    "CHANGE_LANGUAGE" : "Change Language ",
+    "MULTI_LANGUAGE" : "Language Changer",
     "SHOW_LANGUAGE_BAR" : "Show language bar ",
     "UKRAINIAN" : "Ukraine",
     "ENGLISH" : "English", 
@@ -34,7 +38,7 @@
     "CHARTS" : "Charts ",
     "SHOW_CHARTS_PANEL" : "Show charts panel ",
     "HOME" : "Home",
-    "CONTACTS" : "Contacts",
-    "MY_WORKS" : "My Works",
-    "EDUCATION" : "Education"
+    "ABOUT_ME" : "About me",
+    "MY_PROJECTS" : "My projects",
+    "USED_LITERATURE" : "Used libraries"
 }

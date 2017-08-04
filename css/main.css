@@ -57,7 +57,10 @@ header a:focus{
   margin: 0;
 }
 
-
+.panel-info>.panel-heading.orange-panels{
+    color: black;
+    background-color: #fff293;
+}
 .nav-panel {
 	margin: 0 auto;
 	display: flex;
@@ -100,7 +103,97 @@ header a:focus{
 }
 
 .about-me span{
-  color: #ea2d00;
+    color: #ea2d00;
+}
+.pulsar{
+    animation: pulse 0.3s infinite;
+}
+.rotate{
+    animation: rotator 1s infinite;
+}
+.bookslide{
+    animation: bookSlide 1s infinite;
+}
+.gallery{
+    animation: gallery 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+	transform: translateX(-5%);
+  }
+  50% {
+	transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  13% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  38%{
+    transform: rotate(10deg);    
+  }
+  50% {
+	transform: rotate(0deg);
+  }
+  63% {
+	transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  88% {
+	transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bookSlide {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+	transform: rotateY(90deg);
+  }
+  50% {
+	transform: translateX(0);
+  }
+  75% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gallery {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+	transform: rotate(0deg);
+  }
 }
 
 

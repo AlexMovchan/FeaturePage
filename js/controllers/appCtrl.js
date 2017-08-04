@@ -1,3 +1,3 @@
-angular.module("myApp", ['dndLists', 'ngRoute', 'ngDesktopNotification']) ;
+angular.module("myApp", ['dndLists', 'ngRoute', 'ngDesktopNotification', 'ngResource', 'chart.js']) ;
 
 	

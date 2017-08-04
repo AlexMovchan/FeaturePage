@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html ng-app='myApp' ng-cloak>
+	<html ng-app='myApp' ng-controller='rootCtrl as root' ng-cloak>
 		<head>
 			<title>Alex Features</title>
 			<meta charset="utf-8">
@@ -13,19 +13,19 @@
 	        <base href="/"/>
 		</head>
 
-		<body>
+		<body ng-controller='translateCtrl'>
 	<!-- Navigation header -->
 			<header id='header'>
 				<ul class='nav-panel'>
-					<li><a href="#!home">Home</a></li>
-					<li><a href="#!contacts">Contacts</a></li>
-					<li><a href="#!myworks">My Works</a></li>
-					<li><a href="#!education">Education</a></li>
+					<li><a href="#!home">{{translation.HOME}}</a></li>
+					<li><a href="#!contacts">{{translation.CONTACTS}}</a></li>
+					<li><a href="#!myworks">{{translation.MY_WORKS}}</a></li>
+					<li><a href="#!education">{{translation.EDUCATION}}</a></li>
 				</ul>
 			</header>
 
 			<div class="container">
-				
+				{{root.name}}
 				<div ng-view></div> 
 
 	<!-- header -->
@@ -34,15 +34,21 @@
 
 
 			<script src="js/jquery-3.2.1.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
 	        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 	        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 	        
 	        <script src="js/angular.js"></script>
 	        <script src="js/angular-drag-and-drop-lists.js"></script>
+	        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-resource.min.js"></script>
 	        <script src="js/angular_route.js"></script>
 	        <script src="js/angular-desktop-notification.js"></script>
+	        <script src="js/angular-chart.js"></script>
 	        
 	        <script src="js/controllers/appCtrl.js"></script>
+	        <script src="js/controllers/rootCtrl.js"></script>
+	        <script src="js/controllers/services/translateSrvs.js"></script>
+	        <script src="js/controllers/translateCtrl.js"></script>
 	        <script src="js/controllers/routeConfigCtrl.js"></script>
 	        <script src="js/controllers/homeCtrl.js"></script>
 	        <script src="js/controllers/contactsCtrl.js"></script>

@@ -29,6 +29,7 @@ angular.module("myApp")
 		$routeProvider.otherwise({
 		    templateUrl: "view/home.html",
             controller: 'homeCtrl',
+            controllerAs: 'home'
 		});
     
         $locationProvider.html5Mode({

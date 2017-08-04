@@ -36,6 +36,19 @@ header a:focus{
   color: white;
   outline: none;
 }
+
+footer{
+  height: 30px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
 .animatedText{
   font-size: 22px;
 }
@@ -122,6 +135,28 @@ header a:focus{
 }
 .dnd-pan{
     animation: dndPanel .7s infinite;
+}
+
+/*--------------- USED LIBRARIES -------------*/
+.libraries-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.libraries-container ul{
+  list-style: none;
+}
+
+.lib-icon{
+  width:30px;
+  border-radius:10px;
+  margin: 5px;
+  transition: .5s;
+}
+
+.lib-icon:hover{
+  transform: scale(1.4);
 }
 
 @keyframes pulse {

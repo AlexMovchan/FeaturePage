@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html ng-app='myApp' ng-controller='rootCtrl as root' ng-cloak>
 		<head>
-			<title>Alex Features</title>
+			<title>Alex Practice</title>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
@@ -19,18 +19,17 @@
 					<li><a href="#!home">{{translation.HOME}}</a></li>
 					<li><a href="#!myworks">{{translation.MY_PROJECTS}}</a></li>
 					<li><a href="#!contacts">{{translation.ABOUT_ME}}</a></li>
-					<li><a href="#!contacts">{{translation.USED_LITERATURE}}</a></li>
-					
+					<li><a href="#!used_libraries">{{translation.USED_LITERATURE}}</a></li>		
 				</ul>
 			</header>
 
-			<div class="container">
-				{{root.name}}
+			<section class="container" style='margin-bottom: 30px;'>
 				<div ng-view></div> 
+			</section>
 
-	<!-- header -->
-		  		
-			</div>
+			<footer>
+				Copyright © 2017 <a href=""> Alex Movchan</a>
+			</footer>
 
 
 			<script src="js/jquery-3.2.1.js"></script>

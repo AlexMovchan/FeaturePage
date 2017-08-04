@@ -22,10 +22,8 @@ angular.module("myApp")
 		    controllerAs: 'myWorks'
 		});
 
-		$routeProvider.when("/education", {
-		    templateUrl: "view/education.html",
-            controller: 'educationCtrl',
-		    controllerAs: 'education'
+		$routeProvider.when("/used_libraries", {
+		    templateUrl: "view/used_libraries.html",
 		});
 
 		$routeProvider.otherwise({

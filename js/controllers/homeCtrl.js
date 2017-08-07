@@ -3,6 +3,7 @@ angular.module('myApp')
                 
     function homeCtrl($interval, desktopNotification) {
         
+        rootCtrl.apply(this, arguments);
         let vm = this;
 		vm.colWidth = 2; // default value for column of picture in Gallery 
 		vm.tempURL = null; //default value for add picture ti the album

@@ -1,6 +1,6 @@
 <div>
 	<section class="panel panel-primary" style='border-color: black'>
-	    <div class="panel-heading" style='background-color: orange; border-color: orange'>
+	    <div class="panel-heading" style='background-color: {{root.colorTheme}}'>
 			<h1>{{translation.TOOLS_WHICH_I_USE}}</h1>
 			<div>
 				<span>{{translation.HIDE_NAVBAR}} </span>
@@ -15,7 +15,7 @@
 	<!-- Draggable Panel -->
 	<section>
 		<div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.SORTABLE_PANEL}} <i class="fa fa-sort-amount-asc dnd-pan" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_SORTABLE_PANEL}}</span>
@@ -93,8 +93,8 @@
 
 	<!-- Photo Gallery -->
 	<section>
-		<div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		<div class="panel panel-info" >
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.PHOTO_GALLERY}}<i class="fa fa-picture-o gallery" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_PHOTO_GALLERY}}</span>
@@ -125,7 +125,7 @@
 	<!-- Gradient Animation -->
 	<section>
 		<div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.GRADIENT_ANIMATION}} <i class="fa fa-spinner fa-spin fa-fw"></i></h3>
 				<div>
 					<span>{{translation.SHOW_GRADIENT_ANIMATION}} </span>
@@ -155,7 +155,7 @@
     <!--  Notifications	-->
     <section>
         <div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.NOTIFICATIONS}} <i class="fa fa-bell-o pulsar" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_NOTIFICATIONS_BAR}} </span>
@@ -174,7 +174,7 @@
     <!--  Palette Styles  -->
     <section>
         <div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.THEME_CHANGER}} <i class="fa fa-paint-brush rotate" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_COLOR_BAR}} </span>
@@ -186,19 +186,20 @@
 			</div>
 		</div>
         <div id="colorScheme" style='display: none;'>
-            <button class='btn btn-info'>{{translation.CYAN}}</button>
-            <button class='btn btn-warning'>{{translation.ORANGE}}</button>
-            <button class='btn btn-success'>{{translation.GREEN}}</button>
-            <button class='btn btn-danger'>{{translation.RED}}</button>
+            <button class='btn btn-info' ng-click='root.changeColor("#3dcccc")'>{{translation.CYAN}}</button>
+            <button class='btn btn-warning' ng-click='root.changeColor("#ffd640")'>{{translation.ORANGE}}</button>
+            <button class='btn btn-success' ng-click='root.changeColor("#93d893")'>{{translation.GREEN}}</button>
+            <button class='btn btn-danger' ng-click='root.changeColor("red")'>{{translation.RED}}</button>
             <label for="color">{{translation.YOUR_OWN_STYLE}}</label>
-            <input type="color" name='color'>
+            <input type="color" name='color' ng-model='root.chosenColor'>
+            <button class='btn btn-default' ng-click='root.changeColor(root.chosenColor)'>Ok</button>
 		</div>
     </section>
     
     <!--  Translations  -->
     <section>
         <div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.MULTI_LANGUAGE}} <i class="fa fa-language bookslide" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_LANGUAGE_BAR}} </span>
@@ -219,7 +220,7 @@
     <!-- Charts Section -->
     <section>
         <div class="panel panel-info">
-		    <div class="panel-heading orange-panels">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
 				<h3>{{translation.CHARTS}} <i class="fa fa-bar-chart charts" aria-hidden="true"></i></h3>
 				<div>
 					<span>{{translation.SHOW_CHARTS_PANEL}} </span>

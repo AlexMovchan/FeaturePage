@@ -1,11 +1,11 @@
 angular.module('myApp')
 	.controller("homeCtrl", homeCtrl);
-                
+
     function homeCtrl($interval, desktopNotification) {
-        
+
         rootCtrl.apply(this, arguments);
         let vm = this;
-		vm.colWidth = 2; // default value for column of picture in Gallery 
+		vm.colWidth = 2; // default value for column of picture in Gallery
 		vm.tempURL = null; //default value for add picture ti the album
 		vm.drawIsAllowed = true;  //var for timer which used canvas
 		vm.colorTempVar = true;	//var for timer which used color Gradient Timer
@@ -29,7 +29,7 @@ angular.module('myApp')
 					vm.tempcol2 += 2;
 					vm.tempcol3 += 2;
 					vm.tempcol4 += 2;
-					vm.tempcol5 += 2; 	
+					vm.tempcol5 += 2;
 				}, 30)
 				vm.colorTempVar = false;
 			}else{
@@ -37,7 +37,7 @@ angular.module('myApp')
 				vm.colorTempVar = true;
 			}
 		}
-		
+
 		//toggle element by ID
 		vm.toggleElement = function(ID){
 			$(ID).slideToggle(400);
@@ -68,22 +68,22 @@ angular.module('myApp')
 	            let i = 0;
 	            context.save();
 
-	            context.beginPath();  
+	            context.beginPath();
 	            context.moveTo(90,20);
-	     
+
 	            let gradient = context.createLinearGradient(0, 0, 0, 300);
-	            let timer = $interval(drawStroke, 100); 
+	            let timer = $interval(drawStroke, 100);
 	            function drawStroke(){
 	                context.lineTo(x[i], y[i]);
 	                context.fillStyle = gradient;
 	                context.fill();
 	                context.stroke();
-	                
+
 	                gradient.addColorStop(0, "#2eadfd");
 	                gradient.addColorStop(0.85, "White");
 	                i += 1;
 	                if(i == 21) {
-	                    context.moveTo(x[i], y[i]);  
+	                    context.moveTo(x[i], y[i]);
 	                }
 	                if(i == 41) {
 	                    $interval.cancel(timer);
@@ -115,94 +115,52 @@ angular.module('myApp')
 	    	{src: 'https://i.ytimg.com/vi/QFtxVIO8TT0/maxresdefault.jpg', alt: 'Content Picture'},
 	    	{src: 'http://blog.eduweb.pl/wp-content/uploads/2016/10/cover.jpg', alt: 'Content Picture'},
 	    ];
-    
+
         vm.playAudio = function() {
 	        var audio = new Audio('../../audio/msg.mp3');
 	        audio.play();
 	    };
-    
+
         vm.showNotification = function(){
-			if(Notification.permission == 'granted'){
-				vm.playAudio();
-			}
-			desktopNotification.show('Hello', {
-				icon: "../../img/ava.jpg",
-    			body: 'This is notification))',
-    		});
+        	desktopNotification.requestPermission().then(function (permission) {
+				if(Notification.permission == 'granted'){
+					vm.playAudio();
+				}
+				desktopNotification.show('Hello', {
+					icon: "../../img/ava.jpg",
+	    			body: 'This is notification))',
+	    		});
+			})
 		}
-        
-           vm.labels = ["January", "February", "March", "April", "May", "June", "July"];
-          vm.series = ['Series A', 'Series B'];
-          vm.data = [
+
+        vm.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        vm.series = ['Series A', 'Series B'];
+        vm.data = [
             [65, 59, 80, 81, 56, 55, 40],
             [28, 48, 40, 19, 86, 27, 90]
-          ];
-          vm.onClick = function (points, evt) {
+        ];
+        vm.onClick = function (points, evt) {
             console.log(points, evt);
-          };
-          vm.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-          vm.options = {
+        };
+        vm.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+        vm.options = {
             scales: {
-              yAxes: [
-                {
-                  id: 'y-axis-1',
-                  type: 'linear',
-                  display: true,
-                  position: 'left'
-                },
-                {
-                  id: 'y-axis-2',
-                  type: 'linear',
-                  display: true,
-                  position: 'right'
-                }
-              ]
+				yAxes: [
+				{
+					id: 'y-axis-1',
+					type: 'linear',
+					display: true,
+					position: 'left'
+				},
+				{
+					id: 'y-axis-2',
+					type: 'linear',
+					display: true,
+					position: 'right'
+				}
+				]
             }
-          };
-
+        };
 	}
 
 
- // vm.draw = function() {
-	//     	if(vm.drawIsAllowed){
-	//     		vm.drawIsAllowed = false;
-	//             var canvas = document.getElementById("canvas");
-	//             canvas.innerHTML = '';
-	//             var context = canvas.getContext("2d");
-	//            	context.clearRect(0, 0, canvas.width, canvas.height);
-
-	//             var x = [90, 130, 130, 80, 30, 40, 90, 127, 43, 128, 33, 127, 38, 130, 130, 90, 130, 130, 80, 30, 40, 140, 180, 220, 230, 180, 140, 140, 218, 141, 228, 143, 222, 140, 140, 180, 220, 230, 180, 140];
-	//             var y = [20, 30, 180, 200, 160, 60, 20, 30, 60, 100, 160, 178, 90, 55, 30, 20, 30, 180, 200, 160, 60, 30, 20, 60, 160, 200, 180, 31, 60, 100, 160, 179, 90, 55, 30, 20, 60, 160, 200, 180];
-	//             var i = 0;
-	//             context.save();
-
-	//             context.beginPath();  
-	//             context.moveTo(90,20);
-	     
-	//             var gradient = context.createLinearGradient(0, 0, 0, 300);
-	//             var drawStroke = function (){
-	//                 context.lineTo(x[i], y[i]);
-	//                 context.fillStyle = gradient;
-	//                 context.fill();
-	//                 context.stroke();
-	                
-	//                 gradient.addColorStop(0, "#2eadfd");
-	//                 gradient.addColorStop(0.85, "White");
-	//                 i += 1;
-	//                 if(i == 21) {
-	//                     context.moveTo(x[i], y[i]);  
-	//                 }
-	//                 if(i == 41) {
-	//                     clearInterval(timer);
-	//                     context.closePath();
-	//                     context.font = "bold 36px black";
-	//                     context.fillText("KNOW", 300, 90);
-	//                     context.fillText("CANVAS ?", 270, 130);
-	//                		vm.drawIsAllowed = true;
-	//                 }
-	//             }
-	//             var timer = setInterval(drawStroke, 100); 
-	//         }else{
-	//         	return;
-	//         }
- //        }

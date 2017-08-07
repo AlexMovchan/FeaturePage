@@ -7,8 +7,8 @@
 		  		<label class="switch">
 				  <input type="checkbox" ng-click='home.toggleElement("#header")'>
 				  <div class="slider round"></div>
-				</label> 
-			</div>	
+				</label>
+			</div>
 		</div>
 	</section>
 
@@ -22,12 +22,12 @@
 					<label class="switch">
 					  <input type="checkbox" ng-click='home.toggleElement("#dragPanel")'>
 					  <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>
-		
-		
+
+
 		<div class="simpleDemo row" id='dragPanel'>
 		    <div class="col-md-8">
 		        <div class="row">
@@ -101,7 +101,7 @@
 					<label class="switch">
 					    <input type="checkbox" ng-click='home.toggleElement("#photoGallery")'>
 					    <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>
@@ -132,7 +132,7 @@
 					<label class="switch">
 					    <input type="checkbox" ng-click='home.toggleElement("#gradientAnimation")'>
 					    <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>
@@ -151,7 +151,7 @@
 			</div>
 		</div>
 	</section>
-	
+
     <!--  Notifications	-->
     <section>
         <div class="panel panel-info">
@@ -162,7 +162,7 @@
 					<label class="switch">
 					    <input type="checkbox" ng-click='home.toggleElement("#notification")'>
 					    <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>
@@ -170,7 +170,7 @@
             <button class='btn btn-success' ng-click='home.showNotification()'>{{translation.SHOW_NOTIFICATIONS}}</button>
 		</div>
     </section>
-    
+
     <!--  Palette Styles  -->
     <section>
         <div class="panel panel-info">
@@ -181,7 +181,7 @@
 					<label class="switch">
 					    <input type="checkbox" ng-click='home.toggleElement("#colorScheme")'>
 					    <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>
@@ -193,28 +193,7 @@
             <label for="color">{{translation.YOUR_OWN_STYLE}}</label>
             <input type="color" name='color' ng-model='root.chosenColor'>
             <button class='btn btn-default' ng-click='root.changeColor(root.chosenColor)'>Ok</button>
-		</div>
-    </section>
-    
-    <!--  Translations  -->
-    <section>
-        <div class="panel panel-info">
-		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
-				<h3>{{translation.MULTI_LANGUAGE}} <i class="fa fa-language bookslide" aria-hidden="true"></i></h3>
-				<div>
-					<span>{{translation.SHOW_LANGUAGE_BAR}} </span>
-					<label class="switch">
-					    <input type="checkbox" ng-click='home.toggleElement("#languages")'>
-					    <div class="slider round"></div>
-					</label> 
 				</div>
-			</div>
-		</div>
-        <div id="languages" style='display: none;'>
-            <button class='btn btn-warning' ng-click='translate("ua")'>{{translation.UKRAINIAN}}</button>
-            <button class='btn btn-info' ng-click='translate("ru")'>{{translation.RUSSIAN}}</button>
-            <button class='btn btn-warning' ng-click='translate("en")'>{{translation.ENGLISH}}</button>
-		</div>
     </section>
 
     <!-- Charts Section -->
@@ -227,7 +206,7 @@
 					<label class="switch">
 					    <input type="checkbox" ng-click='home.toggleElement("#charts")'>
 					    <div class="slider round"></div>
-					</label> 
+					</label>
 				</div>
 			</div>
 		</div>

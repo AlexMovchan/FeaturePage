@@ -1,8 +1,8 @@
-{  
+{
     "GREETINGS" : "Привет! Меня зовут Александр.",
-    "BIO" : "<p>Мне 26 лет. Я окончил <a href='http://nau.edu.ua/'>национальный Авиационный yниверситет</a> в 2014г. Потом я работал установщиком супутникового ТВ и кондиционеров. В 2016г я пошел на курсы программирования (Фронт Енд), которые длились 6 месяцев. </p> <p>Мое хобби - хоккей. В свободное время я читаю книги и слушаю музыку. Мне нравиться проводить время на природе и путешествовать. Моя мечта стать Senior Fullstuck Developer</p>",
+    "BIO" : "<p>Мне 26 лет. Я окончил <a href='http://nau.edu.ua/'>национальный Авиационный yниверситет</a> в 2014г. Потом я работал установщиком супутникового ТВ и кондиционеров. В 2016г я пошел на курсы программирования (Фронт Енд), которые длились 6 месяцев. </p> <p>Мое хобби - хоккей. В свободное время я читаю книги и слушаю музыку. Мне нравиться проводить время на природе и путешествовать.</p>",
     "WORK_EXPERIENCE" : "Опыт Работы",
-    "WORK_PLACES" : "<li><span>Установщик </span>супутникового ТВ и кондиционеров - 2015</li><li><span>Специалист по ремонту стиральных машин</span> - 2016</li><li><span>Front End Developer</span> - <a target='_blank' href='http://www.relatedata.com/'>Relate Data 2017</a></li><li><span>Front End Developer (AngularJS)</span> - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom 2017</a></li>",
+    "WORK_PLACES" : "<li><b>2014 - </b>Установщик супутникового ТВ и кондиционеров</li><li><b>2016 - </b>Специалист по ремонту стиральных машин</li><li><b>2017 - </b>Front End Developer - <a target='_blank' href='http://www.relatedata.com/'>Relate Data</a></li><li><b>2017 - </b>Front End Developer (AngularJS) - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom</a></li>",
     "TOOLS_WHICH_I_USE" : "Инструменты которые я использовал",
     "HIDE_NAVBAR" : "Спрятать Навигацию",
     "SORTABLE_PANEL" : "Панель сортировки",
@@ -33,12 +33,13 @@
     "MULTI_LANGUAGE" : "Изменить язык",
     "SHOW_LANGUAGE_BAR" : "Показать языковую панель",
     "UKRAINIAN" : "Украинский",
-    "ENGLISH" : "Английский", 
+    "ENGLISH" : "Английский",
     "RUSSIAN" : "Русский",
     "CHARTS" : "Графики",
     "SHOW_CHARTS_PANEL" : "Показать панель графиков",
     "HOME" : "Главная",
     "ABOUT_ME" : "Обо мне",
     "MY_PROJECTS" : "Мои проэкты",
-    "USED_LITERATURE" : "Использованные библиотеки"
+    "USED_LITERATURE" : "Использованные библиотеки",
+    "JOB_ACTIVITY" : "Хронология работ"
 }

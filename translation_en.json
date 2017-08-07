@@ -1,8 +1,8 @@
-{  
+{
     "GREETINGS" : "Hi! My name is Alexandr.",
-    "BIO" : "<p>I'm 26. I finished <a href='http://nau.edu.ua/'>National Aviation university</a> in 2014. Then I worked as an installation engineer for satellite TV and air conditioners. In 2016, I went to the programming courses, where I studied 6 months in the field of Front End. </p> <p>My hobby is hockey. I read books and listen to music in free time. I like spend time in nature and travel. My dream is to become a Senior Fullstuck Developer</p>",
+    "BIO" : "<p>I'm 26. I finished <a href='http://nau.edu.ua/'>national Aviation university</a> in 2014. Then I worked as an installation engineer for satellite TV and air conditioners. In 2016, I went to the programming courses, where I studied 6 months in the field of Front End. </p> <p>My hobby is hockey. I read books and listen to music in free time. I like spend time in nature and travel.</p>",
     "WORK_EXPERIENCE" : "Work experience",
-    "WORK_PLACES" : "<li><span>Installation engineer</span> for satellite TV and air conditioners - 2015</li><li><span>Specialist in repairing washing machines</span> - 2016</li><li><span>Front End Developer</span> - <a target='_blank' href='http://www.relatedata.com/'>Relate Data 2017</a></li><li><span>Front End Developer (AngularJS)</span> - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom 2017</a></li>",
+    "WORK_PLACES" : "<li><b>2014</b> - Installation engineer for satellite TV and air conditioners</li><li><b>2016</b> - Specialist in repairing washing machines</li><li><b>2017</b> - Front End Developer - <a target='_blank' href='http://www.relatedata.com/'>Relate Data</a></li><li><b>2017</b> - Front End Developer (AngularJS) - <a target='_blank' href='https://www.bpotel.com/'>BPO telecom</a></li>",
     "TOOLS_WHICH_I_USE" : "Tools which I use",
     "HIDE_NAVBAR" : "Hide Navbar",
     "SORTABLE_PANEL" : "Sortable Pannel",
@@ -33,12 +33,14 @@
     "MULTI_LANGUAGE" : "Language Changer",
     "SHOW_LANGUAGE_BAR" : "Show language bar ",
     "UKRAINIAN" : "Ukraine",
-    "ENGLISH" : "English", 
+    "ENGLISH" : "English",
     "RUSSIAN" : "Russian",
     "CHARTS" : "Charts ",
     "SHOW_CHARTS_PANEL" : "Show charts panel ",
     "HOME" : "Home",
     "ABOUT_ME" : "About me",
     "MY_PROJECTS" : "My projects",
-    "USED_LITERATURE" : "Used libraries"
+    "USED_LITERATURE" : "Used libraries",
+    "CLICK_ME" : "Click on me",
+    "JOB_ACTIVITY" : "Job Activity"
 }

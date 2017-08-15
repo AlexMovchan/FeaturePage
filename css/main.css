@@ -49,6 +49,13 @@ footer{
   justify-content: center;
   align-items: center;
 }
+.ng-invalid {
+  border-color: red !important;
+}
+.ng-valid {
+  border-color: green !important;
+}
+
 .animatedText{
   font-size: 22px;
 }
@@ -89,7 +96,7 @@ footer{
   height: 250px;
   overflow-y: scroll;
   border-radius: 5px;
-  background-color: #E7EBF0;
+  background-color: #ffd640;;
   margin-bottom: 20px;
   padding: 10px; }
 
@@ -115,6 +122,26 @@ footer{
   margin: 10px 0;
   float: left;
   clear: both; }
+
+.authContainer {
+  display: flex; 
+  flex-flow: row wrap; 
+  height: 100vh; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.authBlock{
+  width: 300px;
+  height: 300px;
+  background-color: #e8e3e3;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid #b1ada9;
+}
 
 .nav-panel li {
 	color: white;

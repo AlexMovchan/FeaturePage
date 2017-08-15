@@ -15,27 +15,39 @@
 		</head>
 
 		<body ng-controller='translateCtrl'>
-	<!-- Navigation header -->
-			<header id='header'>
-			<div style='float: right; margin: 10px;'>
-				<select name="" class='form-control' ng-model='selectedLanguage' ng-change='translate(selectedLanguage)'>
-						<option value="ua" style="background-image:url(img/ua.png)">UA</option>
-						<option value="ru" style="background-image:url(img/ru.jpg)">RU</option>
-						<option value="en" style="background-image:url(img/eng.jpg)">ENG</option>
-				</select>
+			<div ng-if='!root.isAuthorized' class='authContainer'>
+				<div class='authBlock'>
+					<form novalidate name='authForm'>
+						<h3>Please input Your name</h3>
+						<span ng-show='authForm.$error.pattern' style='color: red'>Please enter your name without any symbols. </span>
+						<span ng-show='authForm.$error.pattern' style='color: red'>Allowed symbols A-Z a-z</span>
+						<input type="text" class='form-control' style='margin: 25px 0;' ng-model='root.login' ng-pattern='/^[a-zA-Z]+$/' required>
+						<button class='btn btn-primary' ng-disabled='authForm.$invalid' ng-click='root.allowAuth()'>Submit</button>
+					</form>
+				</div>
 			</div>
-				<ul class='nav-panel'>
-					<li><a href="#!features">{{translation.HOME}}</a></li>
-					<li><a href="#!my_works">{{translation.MY_PROJECTS}}</a></li>
-					<li><a href="#!contacts">{{translation.ABOUT_ME}}</a></li>
-					<li><a href="#!used_libraries">{{translation.USED_LITERATURE}}</a></li>
-				</ul>
-			</header>
+			<div ng-if='root.isAuthorized'>
+				<!-- Navigation header -->
+				<header id='header'>
+					<div style='float: right; margin: 10px;'>
+						<select name="" class='form-control' ng-model='selectedLanguage' ng-change='translate(selectedLanguage)'>
+								<option value="ua" style="background-image:url(img/ua.png)">UA</option>
+								<option value="ru" style="background-image:url(img/ru.jpg)">RU</option>
+								<option value="en" style="background-image:url(img/eng.jpg)">ENG</option>
+						</select>
+					</div>
+					<ul class='nav-panel'>
+						<li><a href="#!features">{{translation.HOME}}</a></li>
+						<li><a href="#!my_works">{{translation.MY_PROJECTS}}</a></li>
+						<li><a href="#!contacts">{{translation.ABOUT_ME}}</a></li>
+						<li><a href="#!used_libraries">{{translation.USED_LITERATURE}}</a></li>
+					</ul>
+				</header>
 
-			<section class="container" style='margin-bottom: 30px;'>
-				<div ng-view></div>
-			</section>
-
+				<section class="container" style='margin-bottom: 30px;'>
+					<div ng-view></div>
+				</section>
+			</div>
 			<footer>
 				Copyright © 2017 <a href="https://www.facebook.com/alexmovchan11" target='_blank'> Alex Movchan</a>
 			</footer>

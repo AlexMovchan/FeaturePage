@@ -10,4 +10,11 @@ root.controller("rootCtrl", rootCtrl);
  			vm.colorTheme = color;
             console.log(color);
  		}
+
+ 		vm.isAuthorized = false;
+ 		vm.login;
+ 		vm.allowAuth = function(){
+ 			vm.isAuthorized = true;
+ 		}
+
     }

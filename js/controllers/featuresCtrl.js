@@ -175,11 +175,14 @@ angular.module('myApp')
         	}
         });
         vm.myName = 'Alex';
-
+        vm.userName = root.login;
+        vm.defaultUser = {name: vm.userName};
         // Send Messages
         vm.send = function() {
             //initialize user name
-            Messages.user({name: vm.userName});
+            console.log(vm.userName);
+            vm.defaultUser = {name: vm.userName};
+            Messages.user(vm.defaultUser);
             Messages.send({data: vm.textbox});
             
             console.log(vm.messages);

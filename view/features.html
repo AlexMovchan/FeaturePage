@@ -217,4 +217,53 @@
             </canvas>
 		</div>
     </section>
+
+	<!-- Dialog Section -->
+    <section>
+    	<div class="panel panel-info">
+		    <div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
+				<h3>{{translation.CHAT}} <i class="fa fa-comments chat" aria-hidden="true"></i></h3>
+				<div>
+					<span>{{translation.SHOW_CHAT_PANEL}} </span>
+					<label class="switch">
+					    <input type="checkbox" ng-click='home.toggleElement("#chat")'>
+					    <div class="slider round"></div>
+					</label>
+				</div>
+			</div>
+		</div>
+		 <div id="chat" style='display: none;'>
+            <div class="chat-container">
+		    <!-- Chat Messages -->
+		    <div class="chat-messages" id='chatId'>
+		    	<span>Your name</span>
+		    	<input type="text" class='form-control' style='width: 200px;margin-bottom:10px; ' ng-model='home.userName'>
+		        <div class="messages-block" id='chatId'>    
+		            <div ng-repeat="message in home.messages track by $index" style="overflow: hidden;">
+
+		                <div ng-if="message.user.name == home.myName" class="sent-message" ng-class="{me: message.user.name == home.me.name}">
+		                    <span class="username">{{ message.user.name }}:</span>
+		                    {{ message.data }}
+		                </div>
+
+		                <div ng-if="message.user.name != home.myName" style="float: right; border-radius: 15px 0 15px 15px; clear: both; background-color: #4ed49c;" class="sent-message" ng-class="{me: message.user.name == home.me.name}">
+		                    <span class="username">{{ message.user.name }}:</span>
+		                    {{ message.data }}
+		                </div>
+
+		                <div class="clear"></div>
+
+		            </div>
+		        </div>
+		    </div>
+		    <!-- User Input -->
+		    <form ng-submit="home.send()" class="chat-input">
+		        <textarea placeholder="Your message" name="usermessage" id="usermessage" class="form-control" cols="10" rows="2" ng-model="home.textbox" style='height: 100px'></textarea>
+		        <div class="form-group sendbtn">
+		            <input class="btn btn-primary send-icon" type="submit" value="Send">
+		        </div>
+		    </form>
+		</div>
+		</div>
+    </section>
 </div>

@@ -74,6 +74,7 @@ footer{
     color: black;
     background-color: #ffd640;
 }
+
 .nav-panel {
 	margin: 0 auto;
 	display: flex;
@@ -82,6 +83,38 @@ footer{
 	text-decoration: none;
 	list-style: none;
 }
+.messages-block {
+  border: 1px solid #b1a7a7;
+  min-height: 100px;
+  height: 250px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  background-color: #E7EBF0;
+  margin-bottom: 20px;
+  padding: 10px; }
+
+.chat-container {
+  background-color: #fff;
+  padding: 20px; }
+
+.send-icon {
+  position: absolute;
+  right: 0;
+  margin: 10px 0; }
+
+.sendbtn {
+  position: relative;
+  height: 50px; }
+
+.sent-message {
+  border-radius: 0 15px 15px 15px;
+  background-color: #4e95d4;
+  color: #fff;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: 10px 0;
+  float: left;
+  clear: both; }
 
 .nav-panel li {
 	color: white;
@@ -135,6 +168,11 @@ footer{
 }
 .dnd-pan{
     animation: dndPanel .7s infinite;
+}
+
+.chat {
+   animation: chat 1.5s infinite;
+
 }
 
 /*--------------- USED LIBRARIES -------------*/
@@ -212,10 +250,10 @@ footer{
     transform: rotateY(0deg);
   }
   25% {
-	transform: rotateY(90deg);
+	  transform: rotateY(90deg);
   }
   50% {
-	transform: translateX(0);
+	  transform: translateX(0);
   }
   75% {
     transform: rotateY(-90deg);
@@ -233,7 +271,7 @@ footer{
     transform: rotate(-20deg);
   }
   100% {
-	transform: rotate(0deg);
+	  transform: rotate(0deg);
   }
 }
 
@@ -245,7 +283,7 @@ footer{
     transform: translate(0px, -5px);
   }
   100% {
-	transform: translate(0px, 0px);
+	  transform: translate(0px, 0px);
   }
 }
 
@@ -257,7 +295,44 @@ footer{
     transform: translate(0px, 5px);
   }
   100% {
-	transform: translate(0px, 0px);
+	  transform: translate(0px, 0px);
+  }
+}
+
+
+@keyframes chat {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(20deg);
+  }
+  90% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 

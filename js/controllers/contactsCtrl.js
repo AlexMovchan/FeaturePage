@@ -1,7 +1,6 @@
 angular.module('myApp')
 	.controller("contactsCtrl", function() {
 		var vm = this;
-		vm.alex = 'HOHOHO'
 		vm.modal = $('#myModal');
 
 		// Get the image and insert it inside the modal - use its "alt" text as a caption

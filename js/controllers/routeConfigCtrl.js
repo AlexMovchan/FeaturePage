@@ -3,21 +3,21 @@ angular.module("myApp")
 
 		$locationProvider.html5Mode(true);
 
-		$routeProvider.when("/home", {
-		    templateUrl: "view/home.html",
-        controller: 'homeCtrl',
-        controllerAs: 'home'
+		$routeProvider.when("/features", {
+		    templateUrl: "view/features.html",
+        	controller: 'featuresCtrl',
+        	controllerAs: 'home'
 		});
 
 		$routeProvider.when("/contacts", {
-        templateUrl: "view/contacts.html",
-        controller: 'contactsCtrl',
+        	templateUrl: "view/contacts.html",
+        	controller: 'contactsCtrl',
 		    controllerAs: 'contacts'
 
 		});
 
 		$routeProvider.when("/my_works", {
-	    templateUrl: "view/my_works.html",
+	    	templateUrl: "view/my_works.html",
 		});
 
 		$routeProvider.when("/used_libraries", {
@@ -25,9 +25,9 @@ angular.module("myApp")
 		});
 
 		$routeProvider.otherwise({
-		    templateUrl: "view/home.html",
-        controller: 'homeCtrl',
-        controllerAs: 'home'
+		    templateUrl: "view/features.html",
+        	controller: 'featuresCtrl',
+        	controllerAs: 'home'
 		});
 
         $locationProvider.html5Mode({

@@ -41,5 +41,7 @@
     "ABOUT_ME" : "Обо мне",
     "MY_PROJECTS" : "Мои проэкты",
     "USED_LITERATURE" : "Использованные библиотеки",
-    "JOB_ACTIVITY" : "Хронология работ"
+    "JOB_ACTIVITY" : "Хронология работ",
+    "CHAT" : "Чат",
+    "SHOW_CHAT_PANEL" : "Показать чат панель"
 }

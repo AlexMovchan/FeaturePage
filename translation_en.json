@@ -42,5 +42,8 @@
     "MY_PROJECTS" : "My projects",
     "USED_LITERATURE" : "Used libraries",
     "CLICK_ME" : "Click on me",
-    "JOB_ACTIVITY" : "Job Activity"
+    "JOB_ACTIVITY" : "Job Activity",
+    "CHAT" : "Chat",
+    "SHOW_CHAT_PANEL" : "Show chat panel"
+
 }

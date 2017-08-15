@@ -1,7 +1,7 @@
 angular.module('myApp')
-	.controller("homeCtrl", homeCtrl);
+	.controller("featuresCtrl", featuresCtrl);
 
-    function homeCtrl($interval, desktopNotification) {
+    function featuresCtrl($interval, desktopNotification, Messages, $timeout) {
 
         rootCtrl.apply(this, arguments);
         let vm = this;
@@ -57,43 +57,43 @@ angular.module('myApp')
 	    }
 
 	    vm.draw = function() {
-	    		vm.drawIsAllowed = false;
-	            let canvas = document.getElementById("canvas");
-	            canvas.innerHTML = '';
-	            let context = canvas.getContext("2d");
-	           	context.clearRect(0, 0, canvas.width, canvas.height);
+    		vm.drawIsAllowed = false;
+            let canvas = document.getElementById("canvas");
+            canvas.innerHTML = '';
+            let context = canvas.getContext("2d");
+           	context.clearRect(0, 0, canvas.width, canvas.height);
 
-	            let x = [90, 130, 130, 80, 30, 40, 90, 127, 43, 128, 33, 127, 38, 130, 130, 90, 130, 130, 80, 30, 40, 140, 180, 220, 230, 180, 140, 140, 218, 141, 228, 143, 222, 140, 140, 180, 220, 230, 180, 140];
-	            let y = [20, 30, 180, 200, 160, 60, 20, 30, 60, 100, 160, 178, 90, 55, 30, 20, 30, 180, 200, 160, 60, 30, 20, 60, 160, 200, 180, 31, 60, 100, 160, 179, 90, 55, 30, 20, 60, 160, 200, 180];
-	            let i = 0;
-	            context.save();
+            let x = [90, 130, 130, 80, 30, 40, 90, 127, 43, 128, 33, 127, 38, 130, 130, 90, 130, 130, 80, 30, 40, 140, 180, 220, 230, 180, 140, 140, 218, 141, 228, 143, 222, 140, 140, 180, 220, 230, 180, 140];
+            let y = [20, 30, 180, 200, 160, 60, 20, 30, 60, 100, 160, 178, 90, 55, 30, 20, 30, 180, 200, 160, 60, 30, 20, 60, 160, 200, 180, 31, 60, 100, 160, 179, 90, 55, 30, 20, 60, 160, 200, 180];
+            let i = 0;
+            context.save();
 
-	            context.beginPath();
-	            context.moveTo(90,20);
+            context.beginPath();
+            context.moveTo(90,20);
 
-	            let gradient = context.createLinearGradient(0, 0, 0, 300);
-	            let timer = $interval(drawStroke, 100);
-	            function drawStroke(){
-	                context.lineTo(x[i], y[i]);
-	                context.fillStyle = gradient;
-	                context.fill();
-	                context.stroke();
+            let gradient = context.createLinearGradient(0, 0, 0, 300);
+            let timer = $interval(drawStroke, 100);
+            function drawStroke(){
+                context.lineTo(x[i], y[i]);
+                context.fillStyle = gradient;
+                context.fill();
+                context.stroke();
 
-	                gradient.addColorStop(0, "#2eadfd");
-	                gradient.addColorStop(0.85, "White");
-	                i += 1;
-	                if(i == 21) {
-	                    context.moveTo(x[i], y[i]);
-	                }
-	                if(i == 41) {
-	                    $interval.cancel(timer);
-	                    context.closePath();
-	                    context.font = "bold 36px black";
-	                    context.fillText("Main", 300, 90);
-	                    context.fillText("Academy", 270, 130);
-	               		vm.drawIsAllowed = true;
-	                }
-	            }
+                gradient.addColorStop(0, "#2eadfd");
+                gradient.addColorStop(0.85, "White");
+                i += 1;
+                if(i == 21) {
+                    context.moveTo(x[i], y[i]);
+                }
+                if(i == 41) {
+                    $interval.cancel(timer);
+                    context.closePath();
+                    context.font = "bold 36px black";
+                    context.fillText("Main", 300, 90);
+                    context.fillText("Academy", 270, 130);
+               		vm.drawIsAllowed = true;
+                }
+            }
         }
 
 		//data for dragNdrop panel
@@ -146,21 +146,54 @@ angular.module('myApp')
         vm.options = {
             scales: {
 				yAxes: [
-				{
-					id: 'y-axis-1',
-					type: 'linear',
-					display: true,
-					position: 'left'
-				},
-				{
-					id: 'y-axis-2',
-					type: 'linear',
-					display: true,
-					position: 'right'
-				}
+					{
+						id: 'y-axis-1',
+						type: 'linear',
+						display: true,
+						position: 'left'
+					},
+					{
+						id: 'y-axis-2',
+						type: 'linear',
+						display: true,
+						position: 'right'
+					}
 				]
             }
         };
+
+        // *********************  chat functions *****************
+        var chatmessages = document.getElementById('chatId');
+        vm.messages = [];
+        Messages.receive(function(msg) {
+        	if(msg.room == vm.currentTicketId){
+	            vm.messages.push(msg);
+	            setTimeout(function() {
+	            	console.log(chatmessages.scrollHeight);
+	                document.getElementById('chatId').scrollTop = document.getElementById('chatId').scrollHeight;
+	            }, 10);
+        	}
+        });
+        vm.myName = 'Alex';
+
+        // Send Messages
+        vm.send = function() {
+            //initialize user name
+            Messages.user({name: vm.userName});
+            Messages.send({data: vm.textbox});
+            
+            console.log(vm.messages);
+
+            var dialog = {data: vm.textbox, user: Messages.user(vm.me), room: vm.currentTicketId}
+            vm.textbox = "";
+        };
+
+        $('#usermessage').keypress(function(event){
+		    var keycode = (event.keyCode ? event.keyCode : event.which);
+		    if(keycode == '13'){
+		        vm.send();
+		    }
+		});
 	}
 
 

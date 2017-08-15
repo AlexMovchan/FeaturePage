@@ -1,7 +1,7 @@
 let root = angular.module('myApp');
 root.controller("rootCtrl", rootCtrl);
 
-	function rootCtrl($scope, translationService, desktopNotification) {
+	function rootCtrl($scope, translationService, desktopNotification, nameStorage) {
  		let vm = this;
 
  		vm.colorTheme = '#ffd640';
@@ -15,6 +15,18 @@ root.controller("rootCtrl", rootCtrl);
  		vm.login;
  		vm.allowAuth = function(){
  			vm.isAuthorized = true;
+ 			nameStorage.setName(vm.login)
  		}
+  }
 
-    }
+  root.service('nameStorage', function () {
+	   var login = 'Bob';
+	   return {
+	       setName: function (name) {
+	         _name = name;
+	       },
+	      getName: function () {
+	         return _name;
+	      }
+		}
+	})

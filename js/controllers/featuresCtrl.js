@@ -1,9 +1,10 @@
 angular.module('myApp')
 	.controller("featuresCtrl", featuresCtrl);
 
-    function featuresCtrl($interval, desktopNotification, Messages, $timeout) {
+    function featuresCtrl($interval, desktopNotification, Messages, $timeout, nameStorage) {
 
         rootCtrl.apply(this, arguments);
+
         let vm = this;
 		vm.colWidth = 2; // default value for column of picture in Gallery
 		vm.tempURL = null; //default value for add picture ti the album
@@ -175,7 +176,7 @@ angular.module('myApp')
         	}
         });
         vm.myName = 'Alex';
-        vm.userName = root.login;
+        vm.userName = nameStorage.getName();
         vm.defaultUser = {name: vm.userName};
         // Send Messages
         vm.send = function() {
@@ -184,7 +185,7 @@ angular.module('myApp')
             vm.defaultUser = {name: vm.userName};
             Messages.user(vm.defaultUser);
             Messages.send({data: vm.textbox});
-            
+
             console.log(vm.messages);
 
             var dialog = {data: vm.textbox, user: Messages.user(vm.me), room: vm.currentTicketId}

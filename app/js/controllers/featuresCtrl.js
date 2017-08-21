@@ -118,7 +118,7 @@ angular.module('myApp')
 	    ];
 
         vm.playAudio = function() {
-	        var audio = new Audio('../../audio/msg.mp3');
+	        var audio = new Audio('../audio/msg.mp3');
 	        audio.play();
 	    };
 
@@ -128,7 +128,7 @@ angular.module('myApp')
 					vm.playAudio();
 				}
 				desktopNotification.show('Hello', {
-					icon: "../../img/ava.jpg",
+					icon: "../img/ava.jpg",
 	    			body: 'This is notification))',
 	    		});
 			})

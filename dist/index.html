@@ -6,12 +6,8 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-			<link rel="stylesheet" href="css/font-awesome.css">
-			<link rel="stylesheet" href="css/hover.css">
+			<link rel="stylesheet" href="css/lib.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
-			<link rel="stylesheet" href="css/timesheet.min.css">
-
-	        <link rel="stylesheet" type="text/css" href="css/main.css">
 		</head>
 
 		<body ng-controller='translateCtrl'>
@@ -31,9 +27,9 @@
 				<header id='header'>
 					<div style='float: right; margin: 10px;'>
 						<select name="" class='form-control' ng-model='selectedLanguage' ng-change='translate(selectedLanguage)'>
-								<option value="ua" style="background-image:url(img/ua.png)">UA</option>
-								<option value="ru" style="background-image:url(img/ru.jpg)">RU</option>
-								<option value="en" style="background-image:url(img/eng.jpg)">ENG</option>
+								<option value="ua">UA</option>
+								<option value="ru">RU</option>
+								<option value="en">ENG</option>
 						</select>
 					</div>
 					<ul class='nav-panel'>
@@ -53,30 +49,24 @@
 			</footer>
 
 
-			<script src="js/jquery-3.2.1.js"></script>
+	  <script src="lib/jquery-3.2.1.js"></script>
       <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-        <script src="js/timesheet.min.js"></script>
+        <script src="lib/timesheet.min.js"></script>
 
-      <script src="js/angular.js"></script>
-        <script src="js/angular-drag-and-drop-lists.js"></script>
+      <script src="lib/angular.js"></script>
+        <script src="lib/angular-drag-and-drop-lists.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-resource.min.js"></script>
-        <script src="js/angular_route.js"></script>
-        <script src="js/angular-desktop-notification.js"></script>
-        <script src="js/angular-chart.js"></script>
+        <script src="lib/angular_route.js"></script>
+        <script src="lib/angular-desktop-notification.js"></script>
+        <script src="lib/angular-chart.js"></script>
         <script src="https://code.angularjs.org/1.2.0-rc.3/angular-sanitize.js"></script>
-        <script src="js/angular-chat.js"></script>
-        <script src="js/rltm.js"></script>
+        <script src="lib/angular-chat.js"></script>
+        <script src="lib/rltm.js"></script>
 
-	        <script src="js/controllers/appCtrl.js"></script>
-	        <script src="js/controllers/chatConfig.js"></script>
-	        <script src="js/controllers/rootCtrl.js"></script>
-	        <script src="js/controllers/services/translateSrvs.js"></script>
-	        <script src="js/controllers/translateCtrl.js"></script>
-	        <script src="js/controllers/routeConfigCtrl.js"></script>
-	        <script src="js/controllers/featuresCtrl.js"></script>
-	        <script src="js/controllers/contactsCtrl.js"></script>
-	        <script src="js/script.js"></script>
+	        <script src="js/appCtrl.js"></script>
+	        <script src='js/controller.js'></script>
+	        <script src='js/translateSrvs.js'></script>
 		</body>
 	</html>

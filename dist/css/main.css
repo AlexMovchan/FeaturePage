@@ -1,25 +1,27 @@
 #keyboard {
   padding: 20px 0; }
-  #keyboard .key-row {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center; }
-  #keyboard .key {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    margin: 2px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: #d8d8d1;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none; }
-    #keyboard .key:hover {
-      box-shadow: 0px 0px 1px 1px black; }
-    #keyboard .key:active {
-      box-shadow: 0px 0px 0px 0px black; }
+
+.key-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.key {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 2px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #d8d8d1;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none; }
+  .key:hover {
+    box-shadow: 0px 0px 1px 1px black; }
+  .key:active {
+    box-shadow: 0px 0px 0px 0px black; }
 
 .special {
   width: 80px; }

@@ -38,7 +38,7 @@ gulp.task('sass', function(){
 });
 
 gulp.task('watch', function(){
-  gulp.watch('app/scss/*.scss', ['scriptConcat', 'stylesConcat', 'sass']);
+  gulp.watch('app/scss/*.scss', ['sass']);
 });
 
 gulp.task('minify', function () {

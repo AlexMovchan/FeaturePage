@@ -150,7 +150,7 @@ footer{
 }
 
 .nav-panel li:hover {
-	background-color: orange;
+	background-color: #ffd640;
 	color: black;
 	cursor: pointer;
 

@@ -1,6 +1,607 @@
-h1{
-	color: grey;
-	&:hover{
-		color: red;
-	}
+.key-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+} 
+
+.key {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	margin: 2px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	background-color: #d8d8d1;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+    	box-shadow: 0px 0px 1px 1px black;
+    }
+    &:active{
+    	box-shadow: 0px 0px 0px 0px black;
+    }
+}
+
+.special{
+	width: 80px;
+}
+
+.space{
+	width: 800px;
+	height: 30px;
+}
+body {
+	margin: 0;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+p{
+  text-indent: 20px
+}
+
+header{
+	background-color: black;
+	width: 100%;
+}
+
+header a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  transition: all 0.3s;
+}
+
+header a:hover{
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+}
+header a:focus{
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
+
+footer{
+  height: 30px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.ng-invalid {
+  border-color: red !important;
+}
+.ng-valid {
+  border-color: green !important;
+}
+
+.animatedText{
+  font-size: 22px;
+}
+.panel{
+  margin:10px 0 ;
+}
+
+.panel-heading {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thumbnail{
+  margin-bottom: 0;
+}
+.row {
+  margin: 0;
+}
+
+.panel-info>.panel-heading.orange-panels{
+    color: black;
+    background-color: #ffd640;
+}
+
+.nav-panel {
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	text-decoration: none;
+	list-style: none;
+}
+.messages-block {
+  border: 1px solid #b1a7a7;
+  min-height: 100px;
+  height: 250px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  background-color: #ffd640;;
+  margin-bottom: 20px;
+  padding: 10px; }
+
+.chat-container {
+  background-color: #fff;
+  padding: 20px; }
+
+.send-icon {
+  position: absolute;
+  right: 0;
+  margin: 10px 0; }
+
+.sendbtn {
+  position: relative;
+  height: 50px; }
+
+.sent-message {
+  border-radius: 0 15px 15px 15px;
+  background-color: #4e95d4;
+  color: #fff;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: 10px 0;
+  float: left;
+  clear: both; }
+
+.authContainer {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#af9207, #c4ce74, #95b198, #436896);
+}
+
+.authBlock{
+  width: 300px;
+  height: 300px;
+  background-color: #e8e3e3;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid #b1ada9;
+}
+
+.nav-panel li {
+	color: white;
+	display: block;
+}
+
+.nav-panel li:hover {
+	background-color: #ffd640;
+	color: black;
+	cursor: pointer;
+
+}
+
+#dragPanel{
+  display: none;
+}
+
+#photoGallery{
+  display: none;
+  border: 1px solid #cccaca;
+  padding: 20px;
+}
+
+.ava{
+  width:100%;
+  cursor: pointer;
+}
+
+.about-me p, ul{
+    font-size: 18px;
+    list-style-type: square;
+}
+
+.about-me span{
+    color: #ea2d00;
+}
+.pulsar{
+    animation: pulse 0.3s infinite;
+}
+.rotate{
+    animation: rotator 1s infinite;
+}
+.bookslide{
+    animation: bookSlide 1s infinite;
+}
+.gallery{
+    animation: gallery 2s infinite;
+}
+.charts {
+    animation: chartsTranslate .7s infinite;
+}
+.dnd-pan{
+    animation: dndPanel .7s infinite;
+}
+
+.chat {
+   animation: chat 1.5s infinite;
+
+}
+
+/*--------------- USED LIBRARIES -------------*/
+.libraries-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.libraries-container ul{
+  list-style: none;
+}
+
+.lib-icon{
+  width:30px;
+  border-radius:10px;
+  margin: 5px;
+  transition: .5s;
+}
+
+.lib-icon:hover{
+  transform: scale(1.4);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+	transform: translateX(-5%);
+  }
+  50% {
+	transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  13% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  38%{
+    transform: rotate(10deg);
+  }
+  50% {
+	transform: rotate(0deg);
+  }
+  63% {
+	transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  88% {
+	transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bookSlide {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+	  transform: rotateY(90deg);
+  }
+  50% {
+	  transform: translateX(0);
+  }
+  75% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gallery {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+	  transform: rotate(0deg);
+  }
+}
+
+@keyframes chartsTranslate {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -5px);
+  }
+  100% {
+	  transform: translate(0px, 0px);
+  }
+}
+
+@keyframes dndPanel {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 5px);
+  }
+  100% {
+	  transform: translate(0px, 0px);
+  }
+}
+
+
+@keyframes chat {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(20deg);
+  }
+  90% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+
+/* ************ libriary styles ************* */
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 14px;
+}
+
+label{
+  margin-bottom: 0;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+  width: 32px;
+  height: 16px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.simpleDemo ul[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+.simpleDemo ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+.simpleDemo ul[dnd-list] .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 42px;
+}
+
+.simpleDemo ul[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+/**
+ * Show selected elements in green
+ */
+.simpleDemo ul[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+
+
+// MODAL WINDOW CSS
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }

@@ -1,7 +1,7 @@
 angular.module('myApp')
 	.controller("featuresCtrl", featuresCtrl);
 
-    function featuresCtrl($interval, desktopNotification, Messages, $timeout, nameStorage) {
+    function featuresCtrl($interval, desktopNotification, Messages, $timeout, nameStorage, $scope) {
 
         rootCtrl.apply(this, arguments);
 
@@ -11,6 +11,7 @@ angular.module('myApp')
 		vm.drawIsAllowed = true;  //var for timer which used canvas
 		vm.colorTempVar = true;	//var for timer which used color Gradient Timer
 		vm.colorInterval;
+		vm.inputWord = '';
 
 		//initialize bootstrap tooltip
 		$(function () {
@@ -118,7 +119,7 @@ angular.module('myApp')
 	    ];
 
         vm.playAudio = function() {
-	        var audio = new Audio('../audio/msg.mp3');
+	        var audio = new Audio('../dist/audio/msg.mp3');
 	        audio.play();
 	    };
 
@@ -128,7 +129,7 @@ angular.module('myApp')
 					vm.playAudio();
 				}
 				desktopNotification.show('Hello', {
-					icon: "../img/ava.jpg",
+					icon: "../dist/img/ava.jpg",
 	    			body: 'This is notification))',
 	    		});
 			})
@@ -198,6 +199,18 @@ angular.module('myApp')
 		        vm.send();
 		    }
 		});
+
+		$('.key').click(function(){
+			if($(this).text() == 'Backspace'){
+				vm.inputWord = vm.inputWord.substring(0, vm.inputWord.length-1)
+				$scope.$apply();
+			}else if($(this).text() == 'SPACE'){
+				vm.inputWord += ' ';
+			}else{
+				vm.inputWord += $(this).text();
+				$scope.$apply();
+			}
+		})
 	}
 
 

@@ -1,0 +1,33 @@
+.key-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+} 
+
+.key {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	margin: 2px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	background-color: #d8d8d1;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+    	box-shadow: 0px 0px 1px 1px black;
+    }
+    &:active{
+    	box-shadow: 0px 0px 0px 0px black;
+    }
+}
+
+.special{
+	width: 80px;
+}
+
+.space{
+	width: 800px;
+	height: 30px;
+}

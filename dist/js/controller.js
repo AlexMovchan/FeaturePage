@@ -14,6 +14,9 @@ angular.module('myApp')
 		var vm = this;
 		vm.modal = $('#myModal');
 
+		console.log($('footer').next());
+		$('footer').next().remove();
+
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
 		vm.img = $('#ava')
 		vm.modalImg = $("#img01");

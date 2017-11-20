@@ -4,6 +4,9 @@ root.controller("rootCtrl", rootCtrl);
 	function rootCtrl($scope, translationService, desktopNotification, nameStorage) {
  		let vm = this;
 
+ 	// 	console.log($('#lastChild').next());
+		// $('#lastChild').next().remove();
+
  		vm.colorTheme = '#ffd640';
 
  		vm.changeColor = function(color){

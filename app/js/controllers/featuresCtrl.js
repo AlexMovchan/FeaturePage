@@ -1,7 +1,7 @@
 angular.module('myApp')
 	.controller("featuresCtrl", featuresCtrl);
 
-    function featuresCtrl($interval, desktopNotification, Messages, $timeout, nameStorage, $scope) {
+    function featuresCtrl($interval, desktopNotification, Messages, $timeout, nameStorage, $scope, HttpLoadData) {
 
         rootCtrl.apply(this, arguments);
 
@@ -13,6 +13,17 @@ angular.module('myApp')
 		vm.colorInterval;
 		vm.inputWord = '';
 
+        vm.goPHP = function(){
+            console.log('SOOOOOOPccER');
+
+            HttpLoadData.load({
+                "action": "go_php",
+            }).then(function(response) {
+                console.log(response);
+            });
+        };
+
+        vm.goPHP();
 		//initialize bootstrap tooltip
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()
@@ -133,36 +144,53 @@ angular.module('myApp')
 	    			body: 'This is notification))',
 	    		});
 			})
-		}
+		};
 
-        vm.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        vm.labels = [];
+        for(let i = 0; i< 18; i++){
+        	vm.labels.push(i);
+		  }
         vm.series = ['Series A', 'Series B'];
-        vm.data = [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90]
-        ];
-        vm.onClick = function (points, evt) {
-            console.log(points, evt);
+        vm.getRandom = function getRandomInt(min, max) {
+           min = Math.ceil(min);
+           max = Math.floor(max);
+           return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
         };
+
+        vm.data = [
+          [65, 59, 80, 81, 56, 55, 40, 22, 42, 34, 75, 23, 12, 34, 66, 4, 22, 3],
+          [28, 48, 40, 19, 86, 27, 90, 54, 24, 12, 43, 26, 66, 54, 35, 7, 34, 1]
+       ];
         vm.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
         vm.options = {
             scales: {
-				yAxes: [
-					{
-						id: 'y-axis-1',
-						type: 'linear',
-						display: true,
-						position: 'left'
-					},
-					{
-						id: 'y-axis-2',
-						type: 'linear',
-						display: true,
-						position: 'right'
-					}
-				]
+                yAxes: [
+                    {
+                        id: 'y-axis-1',
+                        type: 'linear',
+                        display: true,
+                        position: 'left'
+                    },
+                    {
+                        id: 'y-axis-2',
+                        type: 'linear',
+                        display: true,
+                        position: 'right'
+                    }
+                ]
             }
         };
+
+        $interval(function(){
+           vm.data[0] = vm.data[0].splice(1, 17);
+           vm.data[1] = vm.data[1].splice(1, 17);
+           vm.data[0].push(vm.getRandom(1, 100));
+           vm.data[1].push(vm.getRandom(1, 100));
+		  }, 200);
+       vm.onClick = function (points, evt) {
+            console.log(points, evt);
+        };
+
 
         // *********************  chat functions *****************
         var chatmessages = document.getElementById('chatId');

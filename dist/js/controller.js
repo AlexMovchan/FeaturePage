@@ -10,15 +10,14 @@ angular.module('myApp')
 	    }
 	});
 angular.module('myApp')
-	.controller("contactsCtrl", function() {
+	.controller("contactsCtrl", function(HttpLoadData) {
 		var vm = this;
 		vm.modal = $('#myModal');
 
-		console.log($('footer').next());
 		$('footer').next().remove();
 
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		vm.img = $('#ava')
+		vm.img = $('#ava');
 		vm.modalImg = $("#img01");
 		vm.showModal = function(){
 			console.log(vm.img.attr('src'));

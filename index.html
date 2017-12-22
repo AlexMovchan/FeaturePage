@@ -14,11 +14,9 @@
 		<body ng-controller='translateCtrl'>
 			<div ng-if='!root.isAuthorized' class='authContainer'>
 				<div class='authBlock'>
-					<form novalidate name='authForm'>
+					<form name='authForm'>
 						<h3>Please input Your name</h3>
-						<span ng-show='authForm.$error.pattern' style='color: red'>Please enter your name without any symbols. </span>
-						<span ng-show='authForm.$error.pattern' style='color: red'>Allowed symbols A-Z a-z</span>
-						<input type="text" class='form-control' style='margin: 25px 0;' ng-model='root.login' ng-pattern='/^[a-zA-Z]+$/' required>
+						<input type="text" class='form-control' style='margin: 25px 0;' name="login" ng-model='root.login' required>
 						<button class='btn btn-primary' ng-disabled='authForm.$invalid' ng-click='root.allowAuth()'>Submit</button>
 					</form>
 				</div>
@@ -67,6 +65,7 @@
         <script src="dist/lib/rltm.js"></script>
 
 	        <script src="app/js/appCtrl.js"></script>
+	        <script src="app/js/factorys/HTTPLoadData.js"></script>
 	        <script src="app/js/controllers/routeConfigCtrl.js"></script>
 	        <script src="app/js/controllers/chatConfig.js"></script>
 	        <script src="app/js/controllers/contactsCtrl.js"></script>

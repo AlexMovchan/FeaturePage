@@ -150,7 +150,8 @@ footer {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(#af9207, #c4ce74, #95b198, #436896); }
+  background-image: url('../img/login-bg.jpg');
+  background-size: contain;}
 
 .authBlock {
   width: 300px;

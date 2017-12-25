@@ -538,6 +538,12 @@ input:checked + .slider:before {
     animation-duration: 0.6s;
 }
 
+.comment-block {
+    background: grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
@@ -565,6 +571,7 @@ input:checked + .slider:before {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){

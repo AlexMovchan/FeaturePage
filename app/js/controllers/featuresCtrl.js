@@ -13,21 +13,69 @@ angular.module('myApp')
 		vm.colorInterval;
 		vm.inputWord = '';
 
-        vm.goPHP = function(){
-            console.log('SOOOOOOPccER');
+        vm.getComments = function(){
+            console.log('SOOssssssOOOOPccER');
 
             HttpLoadData.load({
-                "action": "go_php",
+                "action": "get_comments"
+            }).then(function(response) {
+                if(typeof(response) == 'object') {
+                    vm.commentsData = response;
+                    console.log(response);
+                }else{
+                    vm.commentsData = [];
+                }
+            });
+        };
+        vm.getComments();
+
+
+        vm.addComment = function(){
+        	let data = vm.getFormData('#commentForm');
+            console.log(data);
+            HttpLoadData.load({
+                "action": "insert_comment",
+				'data' : data,
             }).then(function(response) {
                 console.log(response);
+                vm.getComments();
             });
         };
 
-        vm.goPHP();
+        vm.toggleLike = function(isLike, id){
+            let toggledLike = (isLike == 1) ? 0 : 1 ;
+
+            let data = {
+                isLike : toggledLike,
+                id: id,
+            };
+
+            HttpLoadData.load({
+                "action": "toggle_like",
+                'data' : JSON.stringify(data),
+            }).then(function(response) {
+                vm.getComments();
+            });
+        };
+
+
+        vm.getFormData = function(formId){
+            let data = $(formId).serializeArray();
+
+            let newData = {};
+            for(var i=0; i<data.length; i++){
+                newData[data[i].name] = data[i].value;
+            }
+
+            data = JSON.stringify(newData);
+            return data;
+
+        };
+
 		//initialize bootstrap tooltip
 		$(function () {
 		  	$('[data-toggle="tooltip"]').tooltip()
-		})
+		});
 
 		//ON or OFF interval for changing color gradient of animated elements
 		vm.toggleColorInterval = function(){
@@ -43,31 +91,31 @@ angular.module('myApp')
 					vm.tempcol3 += 2;
 					vm.tempcol4 += 2;
 					vm.tempcol5 += 2;
-				}, 30)
+				}, 30);
 				vm.colorTempVar = false;
 			}else{
 				$interval.cancel(vm.colorInterval);
 				vm.colorTempVar = true;
 			}
-		}
+		};
 
 		//toggle element by ID
 		vm.toggleElement = function(ID){
 			$(ID).slideToggle(400);
-		}
+		};
 
 	    //delete img from picGallery
 	    vm.delImg = function(index){
 	    	if(confirm('Are you sure?')){
 	    		vm.pictures.splice(index, 1);
 	    	}
-	    }
+	    };
 
 	    //add img to picGallery
 	    vm.addImg = function(){
     		vm.pictures.push({src: vm.tempURL, alt: 'Uploaded Picture Not found'});
     		vm.tempURL = null;
-	    }
+	    };
 
 	    vm.draw = function() {
     		vm.drawIsAllowed = false;
@@ -107,7 +155,7 @@ angular.module('myApp')
                		vm.drawIsAllowed = true;
                 }
             }
-        }
+        };
 
 		//data for dragNdrop panel
 		vm.models = {

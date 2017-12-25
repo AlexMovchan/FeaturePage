@@ -286,77 +286,119 @@
 			</div>
 		</div>
 		<div id="keyboard" style='display: none;'>
-		<input type="text" class='form-control' ng-model='home.inputWord' readonly>
+			<input type="text" class='form-control' ng-model='home.inputWord' readonly>
 
 			<!-- "`-Backspace" -->
 			<div class="key-row">
-		    	<div class="key">`</div>
-		    	<div class="key">1</div>
-		    	<div class="key">2</div>
-		    	<div class="key">3</div>
-		    	<div class="key">4</div>
-		    	<div class="key">5</div>
-		    	<div class="key">6</div>
-		    	<div class="key">7</div>
-		    	<div class="key">8</div>
-		    	<div class="key">9</div>
-		    	<div class="key">0</div>
-		    	<div class="key">-</div>
-		    	<div class="key">=</div>
-		    	<div class="key special">Backspace</div>
-		    </div>
+				<div class="key">`</div>
+				<div class="key">1</div>
+				<div class="key">2</div>
+				<div class="key">3</div>
+				<div class="key">4</div>
+				<div class="key">5</div>
+				<div class="key">6</div>
+				<div class="key">7</div>
+				<div class="key">8</div>
+				<div class="key">9</div>
+				<div class="key">0</div>
+				<div class="key">-</div>
+				<div class="key">=</div>
+				<div class="key special">Backspace</div>
+			</div>
 
 			<!-- "q-]" -->
-		    <div class="key-row">
-		    	<div class="key">q</div>
-		    	<div class="key">w</div>
-		    	<div class="key">e</div>
-		    	<div class="key">r</div>
-		    	<div class="key">t</div>
-		    	<div class="key">y</div>
-		    	<div class="key">u</div>
-		    	<div class="key">i</div>
-		    	<div class="key">o</div>
-		    	<div class="key">p</div>
-		    	<div class="key">[</div>
-		    	<div class="key">]</div>
-		    	<div class="key">\</div>
-		    </div>
-	
+			<div class="key-row">
+				<div class="key">q</div>
+				<div class="key">w</div>
+				<div class="key">e</div>
+				<div class="key">r</div>
+				<div class="key">t</div>
+				<div class="key">y</div>
+				<div class="key">u</div>
+				<div class="key">i</div>
+				<div class="key">o</div>
+				<div class="key">p</div>
+				<div class="key">[</div>
+				<div class="key">]</div>
+				<div class="key">\</div>
+			</div>
+
 			<!-- "a-'" -->
-		    <div class="key-row">
-		    	<div class="key">a</div>
-		    	<div class="key">s</div>
-		    	<div class="key">d</div>
-		    	<div class="key">f</div>
-		    	<div class="key">g</div>
-		    	<div class="key">h</div>
-		    	<div class="key">j</div>
-		    	<div class="key">k</div>
-		    	<div class="key">l</div>
-		    	<div class="key">;</div>
-		    	<div class="key">'</div>
-		    	<div class="key special">ENTER</div>
-		    </div>
+			<div class="key-row">
+				<div class="key">a</div>
+				<div class="key">s</div>
+				<div class="key">d</div>
+				<div class="key">f</div>
+				<div class="key">g</div>
+				<div class="key">h</div>
+				<div class="key">j</div>
+				<div class="key">k</div>
+				<div class="key">l</div>
+				<div class="key">;</div>
+				<div class="key">'</div>
+				<div class="key special">ENTER</div>
+			</div>
 
-		    <div class="key-row">
-		    	<div class="key special">SHIFT</div>
-		    	<div class="key">z</div>
-		    	<div class="key">x</div>
-		    	<div class="key">c</div>
-		    	<div class="key">v</div>
-		    	<div class="key">b</div>
-		    	<div class="key">n</div>
-		    	<div class="key">m</div>
-		    	<div class="key">,</div>
-		    	<div class="key">.</div>
-		    	<div class="key">/</div>
-		    	<div class="key special">SHIFT</div>
-		    </div>
+			<div class="key-row">
+				<div class="key special">SHIFT</div>
+				<div class="key">z</div>
+				<div class="key">x</div>
+				<div class="key">c</div>
+				<div class="key">v</div>
+				<div class="key">b</div>
+				<div class="key">n</div>
+				<div class="key">m</div>
+				<div class="key">,</div>
+				<div class="key">.</div>
+				<div class="key">/</div>
+				<div class="key special">SHIFT</div>
+			</div>
 
-		    <div class="key-row">
-		    	<div class="key space">SPACE</div>
-		    </div>
+			<div class="key-row">
+				<div class="key space">SPACE</div>
+			</div>
 		</div>
     </section>
+
+	<section>
+		<div class="panel panel-info">
+			<div class="panel-heading orange-panels" style='background-color: {{root.colorTheme}}'>
+				<h3>Server Database Usage <i class="fa fa-keyboard-o" aria-hidden="true"></i></h3>
+				<div>
+					<span>SHOW Database panel </span>
+					<label class="switch">
+						<input type="checkbox" ng-click='home.toggleElement("#serverDB")'>
+						<div class="slider round"></div>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="serverDB" style='display: none;'>
+			<form name="comment" id="commentForm">
+				<div class="form-group">
+					<label for="author">Author</label>
+					<input type="text" name="author" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="commentMsg">Comment</label>
+					<textarea name="commentMsg" id="" cols="30" rows="10" class="form-control"></textarea>
+				</div>
+				<button class="btn btn-success" ng-click="home.addComment()">Send</button>
+			</form>
+			<section style="padding: 10px;">
+				<div ng-repeat="obj in home.commentsData track by $index">
+					<div class="comment-block" style="background: grey;padding: 10px;border-radius: 10px;position: relative;">
+						<div style="font-size: 12px;color: #13dcff;">{{obj.author}}</div>
+						<div style="color: white;">{{obj.comment}}</div>
+						<div style="position: relative; left: 0;bottom: 13px;float: right;" ng-click="home.toggleLike(obj.isLike, obj.idwallDB)">
+							<i ng-if="obj.isLike == 1" class="fa fa-heart" aria-hidden="true" style="color: #0bc5ff;"></i>
+							<i ng-if="obj.isLike == 0" class="fa fa-heart" aria-hidden="true" style="color: white;"></i>
+						</div>
+					</div>
+					<hr>
+				</div>
+			</section>
+		</div>
+	</section>
 </div>

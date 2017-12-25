@@ -14,9 +14,9 @@ class DataBase
     public function DataBase()
     {
         $this->host="localhost";
-        $this->user="id2249953_alex";
-        $this->pass="frfgekmrf";
-        $this->database="dialer";
+        $this->user="root";
+        $this->pass="mysql";
+        $this->database="comment";
         $this->isLogged=true;
         $this->logLevel="Errors";//all/errors        
         $this->info = array();
